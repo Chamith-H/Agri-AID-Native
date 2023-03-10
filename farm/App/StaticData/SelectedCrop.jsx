@@ -1,14 +1,14 @@
 class SelectedCrop {
 
-    static _name;
+    static __name;
 
     SelectedCrop(name) {
-        _name = name
+        __name = name
     }
 
     fetch() {
         const crop = {
-                        name: _name,
+                        name: __name,
                      }
                      
         return crop

@@ -8,6 +8,8 @@ const CultivationPlan =( { navigation } )=> {
 
     const [needed, setNeeded] = useState('')
 
+    
+
     useEffect(() => {
        const selected_crop = new SelectedCrop
        setNeeded(selected_crop.fetch().name)
@@ -24,12 +26,12 @@ const CultivationPlan =( { navigation } )=> {
 
             <View style={styles.align}>
                 <SquareButton Title_1='Crop Growth' Title_2='Information' press_Action={()=> navigation.navigate('GrowthInfo')}></SquareButton>
-                <SquareButton Title_1='Crop Growth' Title_2='Tracker' press_Action={()=> navigation.navigate('MarketConditions')}></SquareButton>
+                <SquareButton Title_1='Crop Growth' Title_2='Tracker' press_Action={()=> navigation.navigate('GrowthTrack')}></SquareButton>
             </View>
 
             <View style={styles.align}>
                 <SquareButton Title_1='Yield' Title_2='Predictor' press_Action={()=> navigation.navigate('CropRecommendations')}></SquareButton>
-                <SquareButton Title_1='Harvest' Title_2='Recorder'  press_Action={()=> navigation.navigate('CropAdvisiors')}></SquareButton>
+                <SquareButton Title_1='Harvest' Title_2='Recorder'  press_Action={null}></SquareButton>
             </View>
         </View>
     ) 

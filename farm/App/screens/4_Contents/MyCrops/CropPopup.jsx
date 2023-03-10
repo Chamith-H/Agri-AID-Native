@@ -24,6 +24,7 @@ const CropPopup =( props )=> {
     const [selected, setSelected] = useState('')
 
     const [selectedData, setSelectedData] = useState()
+    const [period, setPeriod] = useState()
 
     const first_Done =async()=> {
         const request = new Request
@@ -41,19 +42,27 @@ const CropPopup =( props )=> {
         setTwo(true)
     }
 
-    const second_Done =()=> {
+    const second_Done =async()=> {
         setTwo(false)
         setThree(true)
+
+        const request = new Request
+        const response = await request.Selected({name:selected})
+        setPeriod(response.data[0].period)
     }
 
     const third_Done =async()=> {
+
         const request = new Request
+
+        const grow = new Date()
+        const harvest = new Date(grow.getTime()+(period*24*60*60*1000))
 
         const cultivate = {
                             farmer:props.Farmer,
                             crop:selected,
-                            add:'2022/12/23',
-                            end:'2023/02/23'
+                            begin:grow,
+                            end:harvest,
                           }
 
         const response = await request.Cultivate(cultivate)

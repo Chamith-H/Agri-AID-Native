@@ -115,8 +115,8 @@ const MyCrops =({ navigation })=> {
                     {crops.map((crop, index) => (
                         <View style={styles.list} key={index}>
                             <TouchableOpacity onPress={()=> plan_Cultivation(crop.crop)}><Text style={styles.item}>{crop.crop}</Text></TouchableOpacity>
-                            <Text style={styles.item}>{crop.dateAdd}</Text>
-                            <Text style={styles.item}>{crop.dateEnd}</Text>
+                            <Text style={styles.item}>{crop.begin.slice(0,10)}</Text>
+                            <Text style={styles.item}>{crop.end.slice(0,10)}</Text>
                             <TouchableOpacity onPress={() => get_Remove(crop.crop)}><Image style={styles.options} source={require('../../../Assets/Icons/Delete.png')}/></TouchableOpacity>
                         </View>
                     ))}

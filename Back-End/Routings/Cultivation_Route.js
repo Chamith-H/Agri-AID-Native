@@ -9,8 +9,8 @@ router.route("/addCultivation").post((req, res) => {
     const mongoDocument = new dataModel({
         farmer:req.body.farmer,
         crop:req.body.crop,
-        dateAdd:req.body.add,
-        dateEnd:req.body.end
+        begin:req.body.begin,
+        end:req.body.end,
     })
 
     const response = mongoDocument.save()

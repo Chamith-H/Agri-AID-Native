@@ -7,9 +7,10 @@ const dataModel = require("../Models/CropData_Model")
 router.route("/add").post((req, res) => {
 
     const mongoDocument = new dataModel({
-        id: 2,
-        name : 'Green Chilli (MI-1)',
+        id: 1,
+        name : 'Capsicum (Prarthana)',
         image : 'IMAGE',
+        period : 112,
         requirements: {
             Irrigation: 'Lorem ipsum dolor sit amet.',
             Fertilizer: 'Lorem ipsum dolor sit amet.',
@@ -19,6 +20,126 @@ router.route("/add").post((req, res) => {
             Ideal_Cultivation_Time: 'Lorem ipsum.',
             Maturity_Period: 'Lorem ipsum dolor.',
             Average_Yield: 'Lorem ipsum dolor.'
+        },
+
+        actions: {
+            weeding: {
+                        start : 7,
+                        gap : 7,
+                        end : 112
+                     },
+
+            soiling: {
+                        start : 7,
+                        gap : 7,
+                        end : 112
+                     },
+
+            pruning: {
+                        start : 42,
+                        gap : 7,
+                        end : 112
+                     },
+
+            irrigation: {
+                        start : 7,
+                        gap : 3,
+                        end : 112
+                     },
+
+            fertilization: {
+                        start : 7,
+                        gap : 14,
+                        end : 112
+                     },
+
+            harvesting: {
+                        start : 84,
+                        gap : 7,
+                        end : 112
+                     },
+        },
+
+        cultivation: [
+            {
+                stage: 'testing docs',
+                weeding: 'testing docs',
+                soil: 'testing docs',
+                pruning: 'testing docs'
+            },
+
+            {
+                stage: 'testing docs',
+                weeding: 'testing docs',
+                soil: 'testing docs',
+                pruning: 'testing docs'
+            },
+
+            {
+                stage: 'testing docs',
+                weeding: 'testing docs',
+                soil: 'testing docs',
+                pruning: 'testing docs'
+            },
+        ],
+
+        growth : [
+            {
+                stage: 'testing docs',
+                irrigation: 'testing docs',
+                fertiliation: 'testing docs',
+                nutrient: 'testing docs',
+                ambient: 'testing docs'
+            },
+
+            {
+                stage: 'testing docs',
+                irrigation: 'testing docs',
+                fertiliation: 'testing docs',
+                nutrient: 'testing docs',
+                ambient: 'testing docs'
+            },
+
+            {
+                stage: 'testing docs',
+                irrigation: 'testing docs',
+                fertiliation: 'testing docs',
+                nutrient: 'testing docs',
+                ambient: 'testing docs'
+            },
+        ],
+
+        disease : [
+            {
+                stage:'test deaseas',
+                aT1:'test',
+                aT2:'test',
+                dT1:'test',
+                dT2:'test'
+            },
+
+            {
+                stage:'test deaseas',
+                aT1:'test',
+                aT2:'test',
+                dT1:'test',
+                dT2:'test'
+            },
+
+            {
+                stage:'test deaseas',
+                aT1:'test',
+                aT2:'test',
+                dT1:'test',
+                dT2:'test'
+            }, 
+        ],
+
+        harvest : {
+            time : 'paragraph',
+            grading : 'paragraph',
+            storage : 'paragraph',
+            packing : 'paragraph',
         }
 
     })
@@ -63,6 +184,7 @@ router.route("/recommendation").post( async(req, res) => {
 
 //API 2 Get selected crop
 router.route("/selectedCrop").post( async(req, res) => { 
+    console.log(req.body.name)
     try {
         
         const crop = await dataModel.find({name:req.body.name})

@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const cartSchema = {
     farmer:String,
     crop:String,
-    dateAdd:String,
-    dateEnd:String
+    begin:Date,
+    end:Date
 }
 
 const mongoCollection = mongoose.model("Cultivation", cartSchema)
