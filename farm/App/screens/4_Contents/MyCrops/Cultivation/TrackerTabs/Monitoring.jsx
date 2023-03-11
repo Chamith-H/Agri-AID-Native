@@ -182,18 +182,24 @@ const Monitoring =( props )=> {
     return (
         <ScrollView style={{height:height-180}}>
             {allStages.map((stage, index) => (
-                <View key={index} style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginTop:30, marginLeft:40}}>
-                    <View style={{borderStyle:'solid', borderWidth:1}}>
-                        <Image
-                            style={styles.options}
-                            source={{ uri: stage.image }}
-                        />
+                <View key={index} style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginTop:30}}>
+                    <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+                        <Text style={{backgroundColor:'black',color:'white', height:20, width:20, paddingTop:2, paddingLeft:7, borderRadius:30, marginHorizontal:10}}>{index+1}</Text>
+                        <View style={{borderStyle:'solid', borderWidth:1}}>
+                            {stage.image != null && (
+                                <Image
+                                    style={styles.options}
+                                    source={{ uri: stage.image }}
+                                />
+                            )}
+                            
+                        </View>
                     </View>
 
-                    <View>
+                    <View style={{marginLeft:8}}>
                         <Text style={{color:'black', fontSize:15, fontWeight:800}}>{stage.title} - {stage.name} [{stage.duration} Weeks]</Text>
                         <Text style={{color:'black', fontSize:15, fontWeight:800}}>{stage.begin} to {stage.end}</Text>
-                        <Text style={{color:'grey', marginEnd:'23%', textAlign: 'justify'}}>{stage.description}</Text>
+                        <Text style={{color:'grey', marginEnd:'32%', textAlign: 'justify'}}>{stage.description}</Text>
                     </View>
                 </View>
             ))}

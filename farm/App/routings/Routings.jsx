@@ -18,6 +18,7 @@ import FarmerMgmt from "../screens/6_UserMgmt/FarmerMgmt";
 import CultivationPlan from "../screens/4_Contents/MyCrops/Cultivation/CultivationPlan";
 import GrowthInfo from "../screens/4_Contents/MyCrops/Cultivation/GrowthInfo";
 import GrowthTracker from "../screens/4_Contents/MyCrops/Cultivation/GrowthTracker";
+import YieldPredict from "../screens/4_Contents/MyCrops/Cultivation/YieldPredict";
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +43,7 @@ const Routings =()=> {
                 <Stack.Screen name='Cultivation' component={CultivationPlan} />
                 <Stack.Screen name='GrowthInfo' component={GrowthInfo} />
                 <Stack.Screen name='GrowthTrack' component={GrowthTracker} />
+                <Stack.Screen name='YieldPredict' component={YieldPredict} />
             </Stack.Navigator>
         </NavigationContainer>
     ) 

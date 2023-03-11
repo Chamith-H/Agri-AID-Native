@@ -30,7 +30,7 @@ const CultivationPlan =( { navigation } )=> {
             </View>
 
             <View style={styles.align}>
-                <SquareButton Title_1='Yield' Title_2='Predictor' press_Action={()=> navigation.navigate('CropRecommendations')}></SquareButton>
+                <SquareButton Title_1='Yield' Title_2='Predictor' press_Action={()=> navigation.navigate('YieldPredict')}></SquareButton>
                 <SquareButton Title_1='Harvest' Title_2='Recorder'  press_Action={null}></SquareButton>
             </View>
         </View>

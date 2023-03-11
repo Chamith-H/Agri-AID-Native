@@ -18,6 +18,7 @@ const GrowthTracker =()=> {
 
     const [crop, setCrop] = useState('')
     const [leftTab, setLeftTab] = useState(false)
+    const [error, setError] = useState(false)
     const [data, setData] = useState(false)
 
     const [cropActions, setCropActions] = useState({
@@ -68,6 +69,7 @@ const GrowthTracker =()=> {
                 setPeriod(response.data[0].period)
                 setStages(response.data[0].stages)
                 setLeftTab(true)
+                setError(true)
             }
 
             catch(err) {
@@ -100,7 +102,7 @@ const GrowthTracker =()=> {
                 </Management>
             )}
 
-            {!leftTab && (
+            {!leftTab && error &&(
                 <Monitoring
                     Grow={new Date(growDate)}
                     Stages={stages}>
