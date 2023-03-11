@@ -61,4 +61,27 @@ router.route("/deleteCultivation").post( async(req, res) => {
     }
 })
 
+//API-04
+//Get needed crop want farmer
+router.route("/getDate").post( async(req, res) => { 
+    
+    try {
+        
+        const data = await dataModel.findOne({farmer:req.body.farmer, crop:req.body.crop})
+
+        if (data != null) {
+            res.send(data.begin)
+        } 
+        
+        else {
+            res.status(404).json({ message: "System error" });
+        }
+
+    }
+
+    catch (error) {
+        res.send('Error: ' +error)
+    }
+})
+
 module.exports = router

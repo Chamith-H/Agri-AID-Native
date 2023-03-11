@@ -75,6 +75,11 @@ class Request extends Component {
         return Axios.post(this.serverURL + _API, data);
     }
 
+    GrowedCrop(data) {
+        const _API = '/getDate';
+        return Axios.post(this.serverURL + _API, data);
+    }
+
     //------------------------------------------------------------------------------------------------
     //---------------------------------------------------------------------------------------------------------------
     //

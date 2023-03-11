@@ -7,6 +7,7 @@ const cartSchema = {
     period:Number,
     requirements:Object,
     actions:Object,
+    stages:Object,
     cultivation:Array,
     growth:Array,
     disease:Array,
