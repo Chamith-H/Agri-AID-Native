@@ -213,7 +213,6 @@ const YieldPredict =()=> {
 
 const styles = StyleSheet.create({
     title : {
-        color:'black',
         fontSize:22,
         fontWeight:800,
         marginLeft:25,

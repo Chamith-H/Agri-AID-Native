@@ -19,6 +19,7 @@ import CultivationPlan from "../screens/4_Contents/MyCrops/Cultivation/Cultivati
 import GrowthInfo from "../screens/4_Contents/MyCrops/Cultivation/GrowthInfo";
 import GrowthTracker from "../screens/4_Contents/MyCrops/Cultivation/GrowthTracker";
 import YieldPredict from "../screens/4_Contents/MyCrops/Cultivation/YieldPredict";
+import HarvestRecord from "../screens/4_Contents/MyCrops/Cultivation/HarvestRecord";
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +45,7 @@ const Routings =()=> {
                 <Stack.Screen name='GrowthInfo' component={GrowthInfo} />
                 <Stack.Screen name='GrowthTrack' component={GrowthTracker} />
                 <Stack.Screen name='YieldPredict' component={YieldPredict} />
+                <Stack.Screen name='HarvestRecord' component={HarvestRecord} />
             </Stack.Navigator>
         </NavigationContainer>
     ) 

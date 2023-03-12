@@ -12,6 +12,7 @@ import CloseButton from '../buttons/CloseButton';
 import NegativeButton from '../buttons/NegativeButton';
 import PositiveButton from '../buttons/PositiveButton';
 import AppUser from '../../StaticData/AppUser';
+import RNRestart from 'react-native-restart';
 
 const AccountPopup =( props )=> {
 
@@ -19,6 +20,10 @@ const AccountPopup =( props )=> {
     const[clickedLogout, setClickedLogout] = useState(false)
 
     const[data, setData] = useState({id:'', name:'', email:''})
+
+    const get_LoggingOut =()=> {
+        RNRestart.Restart();
+    }
 
     useEffect(() => {
        const user = new AppUser
@@ -57,7 +62,7 @@ const AccountPopup =( props )=> {
 
                         <View style={styles.chooseButtons}>
                             <View style={{ flex: 1, paddingRight:3 }}>
-                                <PositiveButton Title='Log Out' press_Action={props.logout_User}></PositiveButton>
+                                <PositiveButton Title='Log Out' press_Action={get_LoggingOut}></PositiveButton>
                             </View>
 
                             <View style={{ flex: 1, paddingLeft:3 }}>
