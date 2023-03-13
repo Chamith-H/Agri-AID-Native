@@ -22,6 +22,7 @@ app.use("/", require("./Routings/UserData_Route"));
 app.use("/", require("./Routings/CropData_Route"));
 app.use("/", require("./Routings/MarketCondition_Route"));
 app.use("/", require("./Routings/Cultivation_Route"));
+app.use("/", require("./Routings/HarvestRecord_Route"));
 
 //Testing Back-End
 app.listen(8000, '192.168.8.182', function() {

@@ -12,7 +12,8 @@ import CloseButton from '../buttons/CloseButton';
 import NegativeButton from '../buttons/NegativeButton';
 import PositiveButton from '../buttons/PositiveButton';
 import AppUser from '../../StaticData/AppUser';
-import RNRestart from 'react-native-restart';
+import { useNavigation } from '@react-navigation/native';
+
 
 const AccountPopup =( props )=> {
 
@@ -21,8 +22,10 @@ const AccountPopup =( props )=> {
 
     const[data, setData] = useState({id:'', name:'', email:''})
 
+    const navigation = useNavigation();
+
     const get_LoggingOut =()=> {
-        RNRestart.Restart();
+        navigation.navigate('ChooseRole');
     }
 
     useEffect(() => {

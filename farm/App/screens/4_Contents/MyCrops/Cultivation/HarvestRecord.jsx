@@ -27,6 +27,7 @@ const HarvestRecord =()=> {
     const [calender, setCalender] = useState(false)
 
     const [quantity, setQuantity] = useState(0)
+    const [quality, setQuality] = useState(0)
     const [harvested, setHarvested] = useState('Pick a date')
     
     const get_StartedDate =async( choosed )=> {
@@ -53,12 +54,40 @@ const HarvestRecord =()=> {
         setHarvested(dateString)
     };
 
-    const record_Data =()=> {
+    const reset_Data =async()=> {
+        try {
+            const request = new Request
+            const response = await request.Add_Crop('')
+        }
 
+        catch(err) {
+            console.log(err)
+        }
     }
 
-    const reset_Data =()=> {
-        
+    const record_Data =async()=> {
+        if(quantity !=0 && quality !=0 && harvested != 'Pick a date') {
+
+            const app_user = new AppUser
+            const record =  {
+                                farmer: app_user.fetch().id,
+                                crop:crop,
+                                start:startedDate,
+                                harvested:harvested,
+                                quantity:quantity,
+                                quality:quality
+                            }
+
+            try {
+                const request = new Request
+                const response = await request.Record(record)
+                console.log(response.data)
+            }
+
+            catch(err) {
+                console.log(err)
+            }
+        }
     }
 
     useEffect(() => {
@@ -100,6 +129,7 @@ const HarvestRecord =()=> {
                         <TextInput
                             style={styles.input}
                             placeholder='Enter harvested quantity'
+                            value={quantity}
                             placeholderTextColor={'grey'}
                             onChangeText={(value) => setQuantity(value)}>
                         </TextInput>
@@ -111,8 +141,9 @@ const HarvestRecord =()=> {
                         <TextInput
                             style={styles.input}
                             placeholder='Enter harvested quality'
+                            value={quality}
                             placeholderTextColor={'grey'}
-                            onChangeText={(value) => setQuantity(value)}>
+                            onChangeText={(value) => setQuality(value)}>
                         </TextInput>
                     </View>
                 </View>

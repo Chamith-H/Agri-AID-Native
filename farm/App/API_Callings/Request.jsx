@@ -80,6 +80,11 @@ class Request extends Component {
         return Axios.post(this.serverURL + _API, data);
     }
 
+    Record(data) {
+        const _API = '/record';
+        return Axios.post(this.serverURL + _API, data);
+    }
+
     //------------------------------------------------------------------------------------------------
     //---------------------------------------------------------------------------------------------------------------
     //

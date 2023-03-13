@@ -5,12 +5,13 @@ const cartSchema = {
     name:String,
     image:String,
     period:Number,
+    yield : Number,
     requirements:Object,
     actions:Object,
     stages:Object,
     cultivation:Array,
     growth:Array,
-    disease:Array,
+    disease:Object,
     harvest:Object
 }
 

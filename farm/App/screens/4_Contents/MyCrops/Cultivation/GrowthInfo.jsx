@@ -1,10 +1,10 @@
 import React , {useEffect, useState} from 'react';
-import { View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 import Request from '../../../../API_Callings/Request';
 import BodyHeader from '../../../../components/headers/BodyHeader';
 import SelectedCrop from '../../../../StaticData/SelectedCrop';
 
-const GrowthInfo =( { navigation } )=> {
+const GrowthInfo =()=> {
 
     const [needed, setNeeded] = useState('')
     const [expand, setExpand] = useState(false)
@@ -60,6 +60,7 @@ const GrowthInfo =( { navigation } )=> {
 
             <View style={styles.separater}/>
 
+            <ScrollView>
             {headings.map((heading, index) => (
                 <View key={index}>
                     <TouchableOpacity style={styles.selected} onPress={()=> select_Heading(index)}>
@@ -100,18 +101,104 @@ const GrowthInfo =( { navigation } )=> {
 
                                     {index == 2 &&(
                                         <View>
-                                        {cropData.disease.map((dis, index) => (
-                                            <View key={index} style={{marginHorizontal:12, marginVertical:8}}>
-                                                <Text style={{color:'black', fontWeight:800}}>Stage 0{index+1} - <Text style={{color:'grey'}}>{dis.stage}</Text></Text>
-                                                <Text style={{color:'black', fontWeight:800, marginTop:4}}>Pest Attacks</Text>
-                                                <Text style={{color:'black'}}>Title 1: <Text style={{color:'grey'}}>{dis.aT1}</Text></Text>
-                                                <Text style={{color:'black'}}>Title 2: <Text style={{color:'grey'}}>{dis.aT2}</Text></Text>
-                                                <Text style={{color:'black', fontWeight:800, marginTop:4}}>Disease Threats</Text>
-                                                <Text style={{color:'black'}}>Title 1: <Text style={{color:'grey'}}>{dis.dT1}</Text></Text>
-                                                <Text style={{color:'black'}}>Title 2: <Text style={{color:'grey'}}>{dis.dT2}</Text></Text>
+                                            <View style={{marginTop:20, marginBottom:7, marginLeft:12}}>
+                                                <Text style={{color:'black', fontSize:17, fontWeight:800}}>Pest Attacks and Remedies</Text>
                                             </View>
-                                        ))}
-                                    </View>
+                                            
+
+                                            {cropData.disease.pest.map((pes, index) => (
+                                                <View key={index} style={{marginHorizontal:12, marginVertical:8}}>
+                                                    <Text style={{color:'black', fontSize:16, fontWeight:800}}>{index+1}. {pes.name}</Text>
+
+                                                    <View style={{flexDirection:'row'}}>
+                                                        <View>
+                                                            <Image style={{height:80, width:115, marginRight:10}} source={{ uri: pes.image }}/>
+                                                        </View>
+
+                                                        <View>
+                                                            <View>
+                                                                <View>
+                                                                    <Text style={{color:'black', fontWeight:800}}>Symptoms</Text>
+                                                                </View>
+
+                                                                {pes.symptoms.map((symptom) => (
+                                                                    <View style={{flexDirection:'row'}}>
+                                                                        <Image style={{height:5, width:5, marginTop:6, marginRight: 6}} source={require('../../../../Assets/Icons/Bullet.png')}/>
+
+                                                                        <View style={{marginRight:133}}>
+                                                                            <Text style={{color:'grey'}}>{symptom}</Text>
+                                                                        </View>
+                                                                    </View>
+                                                                ))}
+
+                                                                <View style={{marginTop:10}}>
+                                                                    <Text style={{color:'black', fontWeight:800}}>Remedies</Text>
+                                                                </View>
+
+                                                                {pes.remedies.map((remedy) => (
+                                                                    <View style={{flexDirection:'row'}}>
+                                                                        <Image style={{height:5, width:5, marginTop:6, marginRight: 6}} source={require('../../../../Assets/Icons/Bullet.png')}/>
+
+                                                                        <View style={{marginRight:133}}>
+                                                                            <Text style={{color:'grey'}}>{remedy}</Text>
+                                                                        </View>
+                                                                    </View>
+                                                                ))}
+                                                            </View>
+                                                        </View>
+                                                    </View>
+                                                </View>
+                                            ))}
+
+                                            <View style={{marginTop:20, marginBottom:7, marginLeft:12}}>
+                                                <Text style={{color:'black', fontSize:17, fontWeight:800}}>Pest Attacks and Remedies</Text>
+                                            </View>
+                                            
+
+                                            {cropData.disease.threats.map((pes, index) => (
+                                                <View key={index} style={{marginHorizontal:12, marginVertical:8}}>
+                                                    <Text style={{color:'black', fontSize:16, fontWeight:800}}>{index+1}. {pes.name}</Text>
+
+                                                    <View style={{flexDirection:'row'}}>
+                                                        <View>
+                                                            <Image style={{height:80, width:115, marginRight:10}} source={{ uri: pes.image }}/>
+                                                        </View>
+
+                                                        <View>
+                                                            <View>
+                                                                <View>
+                                                                    <Text style={{color:'black', fontWeight:800}}>Symptoms</Text>
+                                                                </View>
+
+                                                                {pes.symptoms.map((symptom) => (
+                                                                    <View style={{flexDirection:'row'}}>
+                                                                        <Image style={{height:5, width:5, marginTop:6, marginRight: 6}} source={require('../../../../Assets/Icons/Bullet.png')}/>
+
+                                                                        <View style={{marginRight:133}}>
+                                                                            <Text style={{color:'grey'}}>{symptom}</Text>
+                                                                        </View>
+                                                                    </View>
+                                                                ))}
+
+                                                                <View style={{marginTop:10}}>
+                                                                    <Text style={{color:'black', fontWeight:800}}>Remedies</Text>
+                                                                </View>
+
+                                                                {pes.remedies.map((remedy) => (
+                                                                    <View style={{flexDirection:'row'}}>
+                                                                        <Image style={{height:5, width:5, marginTop:6, marginRight: 6}} source={require('../../../../Assets/Icons/Bullet.png')}/>
+
+                                                                        <View style={{marginRight:133}}>
+                                                                            <Text style={{color:'grey'}}>{remedy}</Text>
+                                                                        </View>
+                                                                    </View>
+                                                                ))}
+                                                            </View>
+                                                        </View>
+                                                    </View>
+                                                </View>
+                                            ))}
+                                        </View>
                                     )}
 
                                     {index == 3 &&(
@@ -143,6 +230,7 @@ const GrowthInfo =( { navigation } )=> {
                     )}
                 </View>
             ))}
+            </ScrollView>
         </View>
     ) 
 }
@@ -169,7 +257,7 @@ const styles = StyleSheet.create({
     },
 
     body : {
-        flex:1,
+        flex:1
     },
 
     separater : {

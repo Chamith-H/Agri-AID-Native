@@ -9,8 +9,9 @@ router.route("/add").post((req, res) => {
     const mongoDocument = new dataModel({
         id: 1,
         name : 'Capsicum (Prarthana)',
-        image : 'IMAGE',
+        image : 'https://drive.google.com/uc?id=15IXNiPHKjtAACLPkFHlfjfYVQOP6ee37',
         period : 112,
+        yield : 296,
         requirements: {
             Irrigation: 'Lorem ipsum dolor sit amet.',
             Fertilizer: 'Lorem ipsum dolor sit amet.',
@@ -24,13 +25,13 @@ router.route("/add").post((req, res) => {
 
         actions: {
             weeding: {
-                        start : 7,
+                        start : 0,
                         gap : 7,
                         end : 112
                      },
 
             soiling: {
-                        start : 7,
+                        start : 0,
                         gap : 7,
                         end : 112
                      },
@@ -42,13 +43,13 @@ router.route("/add").post((req, res) => {
                      },
 
             irrigation: {
-                        start : 7,
+                        start : 0,
                         gap : 3,
                         end : 112
                      },
 
             fertilization: {
-                        start : 7,
+                        start : 0,
                         gap : 14,
                         end : 112
                      },
@@ -73,7 +74,7 @@ router.route("/add").post((req, res) => {
                 start:21,
                 end:42,
                 duration:3,
-                image:'https://drive.google.com/uc?id=1H3wTL7KmtArnuOTGzIC60dn2k_PhThR3',
+                image:'https://drive.google.com/uc?id=1DIHN0jiyusQ2f2Sk0hAoLyVWfwTeShO2',
                 description:'During this stage, the plant grows rapidly and develops its leaves, stems, and roots. At this stage, the plant has several pairs of leaves, and the stem becomes thicker and stronger.'
             },
 
@@ -81,7 +82,7 @@ router.route("/add").post((req, res) => {
                 start:42,
                 end:56,
                 duration:2,
-                image:'https://drive.google.com/uc?id=1H3wTL7KmtArnuOTGzIC60dn2k_PhThR3',
+                image:'https://drive.google.com/uc?id=1uXO19ypFVSRXueVYlo8msROf3vLDvEmG',
                 description:'The plant starts to produce flowers at the end of the vegetative stage or the beginning of the flowering stage. During this stage, the flowers bloom, and pollination occurs. At this stage, the plant has small, white or yellow flowers.'
             },
 
@@ -89,7 +90,7 @@ router.route("/add").post((req, res) => {
                 start:56,
                 end:84,
                 duration:4,
-                image:'https://drive.google.com/uc?id=1H3wTL7KmtArnuOTGzIC60dn2k_PhThR3',
+                image:'https://drive.google.com/uc?id=1YujBvK3NXOCaX0mBT_mjLHhMYXhxKTC7',
                 description:'After the flowers are pollinated, they start to develop, grow and mature into fruits. At this stage, the plant initially has small, green fruits that will eventually mature into fruits ready for harvest.'
             },
 
@@ -97,91 +98,134 @@ router.route("/add").post((req, res) => {
                 start:84,
                 end:112,
                 duration:4,
-                image:'https://drive.google.com/uc?id=1H3wTL7KmtArnuOTGzIC60dn2k_PhThR3',
+                image:'https://drive.google.com/uc?id=1MkTcOk7DxJ3tbTfO1FrQzd0dBTEwO72m',
                 description:'This is the final stage of the capsicum crop, where the mature fruits are harvested from the plant. During this stage, the fruits are shiny and firm and are greenish yellow in colour.'
             },
         },
 
         cultivation: [
             {
-                stage: 'testing docs',
-                weeding: 'testing docs',
-                soil: 'testing docs',
-                pruning: 'testing docs'
+                weeding: 'During the seeding stage, it is important to keep the soil in the pots free from weeds. Weeds can compete with the young seedlings for nutrients and moisture, which can stunt their growth. Weeding should be done manually or using a shallow hoe to avoid damaging the seedlings.',
+                soil: 'During the seeding stage, the soil should be well-drained and fertile. Prepare the soil by adding organic matter such as compost and manure for optimal results.',
+                pruning: ''
             },
 
             {
-                stage: 'testing docs',
-                weeding: 'testing docs',
-                soil: 'testing docs',
-                pruning: 'testing docs'
+                weeding: 'During the vegetative stage, Capsicum plants grow rapidly, and it is important to keep the weeds under control. Weeds can still compete with the plants for nutrients and moisture. Weeding should be done manually or using a shallow hoe to avoid damaging the plant.',
+                soil: 'During the vegetative stage, the soil should be kept moist but not waterlogged. Adding a layer of mulch on the soil surface can help retain moisture and suppress weed growth. ',
+                pruning: ''
             },
 
             {
-                stage: 'testing docs',
-                weeding: 'testing docs',
-                soil: 'testing docs',
-                pruning: 'testing docs'
+                weeding: 'During the flowering stage, it is important to maintain a weed-free environment to ensure healthy plant growth as weeds can still compete with the plants for nutrients and moisture. Weeding should be done manually or using a shallow hoe to avoid damaging the plant.',
+                soil: 'During the flowering stage, the soil should be kept moist but not waterlogged. Adding a layer of mulch on the soil surface can help retain moisture and suppress weed growth. ',
+                pruning: 'During the flowering stage, it is important to remove any damaged or diseased leaves.'
             },
+
+            {
+                weeding: 'During the fruit development stage, it is important to maintain a weed-free environment to ensure healthy plant growth and optimal yield as weeds can still compete with the plants for nutrients and moisture. Weeding should be done manually or using a shallow hoe to avoid damaging the plant.',
+                soil: 'During the fruit development stage, the soil should be kept moist but not waterlogged. Adding a layer of mulch on the soil surface can help retain moisture and suppress weed growth. ',
+                pruning: "During the fruit development stage, it is important to remove any damaged or diseased leaves, as well as any fruit that is misshapen or small to help direct the plant's energy towards the remaining healthy fruit. Any lower branches that are not producing fruit could be pinched off as well."
+            },
+
+            {
+                weeding: 'During the harvesting stage, it is important to continue weeding to maintain a clean growing environment for the remaining plants. Weeds can still compete with the plants for nutrients and moisture, which can affect the quality of the produce. Weeding should be done manually or using a shallow hoe to avoid damaging the plant.',
+                soil: 'During the harvesting stage, the soil should be kept moist but not waterlogged. Adding a layer of mulch on the soil surface can help retain moisture and suppress weed growth. ',
+                pruning: "During the harvesting stage, it is important to remove any damaged or diseased leaves, any fruit that is misshapen or any overripe fruit starting to decay to help direct the plant's energy towards the remaining healthy fruit and to also eliminate the attraction of pests and diseases."
+            },
+            
         ],
 
         growth : [
             {
-                stage: 'testing docs',
-                irrigation: 'testing docs',
-                fertiliation: 'testing docs',
-                nutrient: 'testing docs',
-                ambient: 'testing docs'
+                irrigation: 'During the seeding stage, it is important to keep the soil moist but not waterlogged. Water the seeds with a gentle mist or a fine spray using a watering can or a misting system to avoid overwatering.',
+                fertiliation: 'During the seeding stage, a light application of urea fertilizer can be applied to the soil to provide nitrogen for healthy growth. The recommended rate is 1g per plant, once every two weeks.',
+                nutrient: 'During the seeding stage, a light application of nitrogen (N), phosphorus (P), and potassium (K). The recommended application rate is 1g per plant (20:20:20 NPK), once every two weeks.',
+                ambient: ['Temperature Range: 25-30°C', 'RH Range: 60-70%', 'pH Range: 5.5-6.5', 'EC Range: 0.8-1.2 mS/cm']
             },
 
             {
-                stage: 'testing docs',
-                irrigation: 'testing docs',
-                fertiliation: 'testing docs',
-                nutrient: 'testing docs',
-                ambient: 'testing docs'
+                irrigation: 'During the vegetative stage, Capsicum plants should be watered regularly and thoroughly, so that the soil is moist but not saturated.',
+                fertiliation: 'During the vegetative stage, a balanced fertilizer such as TSP (Triple Super Phosphate) can be applied to the soil to promote leaf growth and stem development. The recommended fertilizer rate is 3g per plant, once every two weeks.',
+                nutrient: 'During the vegetative stage, Capsicum plants require more nitrogen (N) to support their growth. The recommended application rate is 3g per plant (20:20:20 NPK), once every two weeks.',
+                ambient: ['Temperature Range: 25-30°C', 'RH Range: 70-80%', 'pH Range: 6.0-6.5', 'EC Range: 1.2-1.8 mS/cm']
             },
 
             {
-                stage: 'testing docs',
-                irrigation: 'testing docs',
-                fertiliation: 'testing docs',
-                nutrient: 'testing docs',
-                ambient: 'testing docs'
+                irrigation: 'During the flowering stage, it is important to maintain a consistent level of soil moisture. Water the Capsicum plants regularly and thoroughly to ensure that the water reaches the roots. However, avoid watering the foliage and overwatering.',
+                fertiliation: 'During the flowering stage, a balanced fertilizer such as TSP (Triple Super Phosphate) can be applied for healthy flower development. The recommended fertilizer rate is 4g per plant, once every two weeks.',
+                nutrient: 'During the flowering stage, Capsicum plants require more phosphorus (P) and potassium (K) to support flower and fruit development. The recommended application rate is 4g per plant (10:30:20 NPK), once every two weeks.',
+                ambient: ['Temperature Range: 20-25°C', 'RH Range: 70-80%', 'pH Range: 6.0-6.5', 'EC Range: 1.5-2.0 mS/cm']
+            },
+
+            {
+                irrigation: 'During the fruit development stage, it is important to maintain a consistent level of soil moisture. However, prevent overwatering and saturation. ',
+                fertiliation: 'During the fruit development stage, a balanced fertilizer such as MOP (Muriate of Potash) can be applied to the soil to promote healthy fruit development. The recommended fertilizer rate is 4g per plant, once every two weeks.',
+                nutrient: 'During the fruit development stage, Capsicum plants require more potassium (K) to support fruit growth and quality. The recommended application rate is 5g per plant (12:12:36), once every two weeks.',
+                ambient: ['Temperature Range: 20-25°C', 'RH Range: 60-70%', 'pH Range: 6.0-6.5', 'EC Range: 2.0-2.5 mS/cm']
+            },
+
+            {
+                irrigation: 'During the harvesting stage, it is important to reduce the amount of water to prevent the fruit from splitting. ',
+                fertiliation: 'During the harvesting stage, a lower dose of a balanced fertilizer such as TSP (Triple Super Phosphate) can be applied to support the continued growth and development of new flowers and fruits. The recommended fertilizer rate is 3g per plant, once every two weeks.',
+                nutrient: 'During the harvesting stage, Capsicum plants only require lower amounts nitrogen (N), phosphorus (P), and potassium (K). The recommended application rate is 2g per plant (20:20:20 NPK), once every two weeks.',
+                ambient: ['Temperature Range: 20-25°C', 'RH Range: 60-70%', 'pH Range: 6.0-6.5', 'EC Range: 2.0-2.5 mS/cm']
             },
         ],
 
-        disease : [
-            {
-                stage:'test deaseas',
-                aT1:'test',
-                aT2:'test',
-                dT1:'test',
-                dT2:'test'
-            },
+        disease : {
+           pest : [
+                    {
+                        name: 'Aphids',
+                        image:'https://drive.google.com/uc?id=12mUTq_oheTaxpybeBqSy6XoTA76iIGuS',
+                        symptoms: ['Stunted growth and yellowing of leaves.', 'Curling or distortion of leaves.', 'Sticky residue on leaves and stems.', 'Presence of small, pear-shaped insects on the plant.'],
+                        remedies: ['Prune affected leaves and dispose of them.', 'Use sticky traps such as yellow sticky cards.']
+                    },
 
-            {
-                stage:'test deaseas',
-                aT1:'test',
-                aT2:'test',
-                dT1:'test',
-                dT2:'test'
-            },
+                    {
+                        name: 'White Flies',
+                        image:'https://drive.google.com/uc?id=1R9LO7sWV-SflAqFkgdzLv2Z1PYdHqhuX',
+                        symptoms: ['Yellowing and wilting of leaves.', 'Sticky residue on leaves and stems.', 'Presence of small, white, moth-like insects on the plant.', 'Black sooty growing mould.'],
+                        remedies: ['Prune affected leaves and dispose of them.', 'Use sticky traps such as yellow sticky cards.']
+                    },
 
-            {
-                stage:'test deaseas',
-                aT1:'test',
-                aT2:'test',
-                dT1:'test',
-                dT2:'test'
-            }, 
-        ],
+                    {
+                        name: 'Mites',
+                        image:'https://drive.google.com/uc?id=1YjoSfTurNb-stSNDY2d1J6bHqdZp-MXy',
+                        symptoms: ['Speckling or yellowing of leaves.', 'Small webs on the plant.', 'Stunted plant growth.', 'Wilting and leaf drop.'],
+                        remedies: ['Prune affected leaves and dispose of them.', 'Use sticky traps such as yellow sticky cards.']
+                    },
+                  ],
+
+           threats : [
+                        {
+                            name: 'Damping Off',
+                            image:'https://drive.google.com/uc?id=1bGI4gae9K7jyhEpH6jz6Bh3gN7NYYEa6',
+                            symptoms: ['The seedling dies before/after emerging from the soil level.', 'Seeds and seedlings get rotten.', 'Infection appears first at the plant’s base or root.', 'Moisture and soft rot are visible in tissues from infected areas.', 'The infected area shrinks and the plant collapses when the damage is severe.', 'Before the plant dies, the leaves become withered.'],
+                            remedies: ['Soil solarization.', 'The diseased plants should be removed and destroyed.']
+                        },
+
+                        {
+                            name: 'Leaf Curl Virus',
+                            image:'https://drive.google.com/uc?id=1arVFuBNL8Y-FVZ5RSZ3xu1bWO-0dKJHh',
+                            symptoms: ['Yellowing of leaves and veins become clearly visible.', 'Dwarfing of plants and formation of excessive number of shoots.', 'Upward curling of leaves due to reduced leaf size.', 'The pods of infected plants are small.'],
+                            remedies: ['Timely cultivation.', 'Improve weed control.']
+                        },
+
+                        {
+                            name: 'Leaf Spot Virus',
+                            image:'https://drive.google.com/uc?id=1jC3jyqG-SDTnB7htgJP4jTgOUINAKxtZ',
+                            symptoms: ['During the initial stage brownish circular spots appear on leaves.', 'At latter stages, leaves turn yellow and drop.', 'Infected leaves will fall after become wilted and rolled.', 'The lower mature leaves are usually the first to become infected.', 'When the damage is severe, upper leaves are also become infected.'],
+                            remedies: ['Collect all the infected leaves and destroy them.', 'To avoid high RH ambient conditions.', 'Apply the recommended amount of fertilizers.']
+                        },
+                     ]
+        },
 
         harvest : {
-            time : 'paragraph',
-            grading : 'paragraph',
-            storage : 'paragraph',
-            packing : 'paragraph',
+            time : 'First harvesting can be done approximately 84 days after planting. Practice harvesting in dry weather conditions.',
+            grading : ['The products under this grade are typically uniform in size (Pod length 13-15 cm Pod weight 35-40g), shape, colour, and texture and are free from any defects or blemishes.', 'The products under this grade do not meet the strict requirements of Grade A as they may have some minor defects, such as small blemishes or slight variations in size or colour.', 'The products under this grade have more defects than Grade B as they may have significant blemishes, deformities, or discolorations.', 'The products under this grade are damaged, spoiled or contaminated and are therefore not fit for human consumption or use.'],
+            storage : "To store capsicums after harvest, it's important to keep them in a cool, dry place away from direct sunlight, ideally between 10-12°C. As capsicums are sensitive to moisture, it's crucial to ensure they stay dry during storage. It's also best to store capsicums separately from other produce as they release ethylene gas, which can cause other fruits and vegetables to ripen and spoil faster. If using containers, choose breathable options such as mesh bags or perforated plastic bags to allow for air circulation and prevent moisture build-up.",
+            packing : "To package capsicum begin by cleaning the harvest and removing any dirt or debris. Next, use food-grade plastic bags or breathable containers made for storing vegetables, ensuring they're clean, dry, and free of any contaminants. Carefully place the capsicums in the packaging, taking care not to bruise or damage them. If using plastic bags, make sure to remove as much air as possible before sealing. Label the packaging with relevant information such as the date of harvest, capsicum variety, and grade.",
         }
 
     })
