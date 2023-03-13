@@ -53,10 +53,11 @@ const CropRecommendations =()=> {
     }
 
     return (
-        <ScrollView style={{backgroundColor:'white', flex:1}}>
+        <View>
             <BodyHeader Title='Crop Recommendations'></BodyHeader>
-
-            <View style={styles.form}>
+                <ScrollView style={{backgroundColor:'white'}}>
+                    <View style={styles.form}>
+                
                 <SelectionDropdown Label='Select Region' List={Regions} Selected={setSelectRegion}></SelectionDropdown>
                 <SelectionDropdown Label='Select Quarter' List={Quarters} Selected={setSelectQuarter}></SelectionDropdown>
 
@@ -65,10 +66,11 @@ const CropRecommendations =()=> {
                 </View>
             </View>
 
-            <View style={{width:'100%'}}>
+            <View style={{width:'100%', marginBottom:50}}>
                 <HoriontalScroller CropList={crops}></HoriontalScroller>
             </View>
         </ScrollView>
+        </View>
     )
 }
 

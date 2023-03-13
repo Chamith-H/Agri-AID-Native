@@ -98,10 +98,14 @@ const HarvestRecord =()=> {
     }, []);
 
     return (
-        <ScrollView>
+        
+        <View>
             <BodyHeader Title='Harvest Recorder'></BodyHeader>
+            <ScrollView>
+            
             <Text style={styles.title}>{crop}</Text>
-
+            
+            
             <View style={{display:'flex', flexDirection:'row', paddingLeft:15, marginTop:30}}>
 
                 <View style={{height:195, justifyContent:'space-between', marginTop:6}}>
@@ -149,7 +153,7 @@ const HarvestRecord =()=> {
                 </View>
             </View>
 
-            <View style={{flexDirection:'row', display:'flex', justifyContent:'center', marginTop:50, marginBottom:60}}>
+            <View style={{flexDirection:'row', display:'flex', justifyContent:'center', marginTop:50, marginBottom:200}}>
                 <View style={{display:'flex', width:140}}>
                     <PositiveButton Title='Complete' press_Action={record_Data}></PositiveButton>
                 </View>
@@ -166,7 +170,10 @@ const HarvestRecord =()=> {
                     onChange={handleTimeSelection}
                 />
             )}
-        </ScrollView>
+            </ScrollView>
+            
+        </View>
+        
     )
 }
 

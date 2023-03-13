@@ -8,7 +8,7 @@ const DoubleTab =( props )=> {
         <View style={styles.tabBar}>
             <View style={{ flex: 1}}>
                 <TouchableOpacity onPress={ props.press_LeftAction }>
-                    <View style={styles.button}>
+                    <View style={props.Mark? styles.active:styles.button}>
                         <Text style={styles.title}>{ props.LeftButton }</Text>
                     </View>
                 </TouchableOpacity>
@@ -18,7 +18,7 @@ const DoubleTab =( props )=> {
 
             <View style={{ flex: 1}}>
                 <TouchableOpacity onPress={ props.press_RightAction }>
-                    <View style={styles.button}>
+                    <View style={!props.Mark? styles.active:styles.button}>
                         <Text style={styles.title}>{props.RightButton}</Text>
                     </View>
                 </TouchableOpacity>
@@ -44,6 +44,13 @@ const styles = StyleSheet.create({
 
     button: {
         backgroundColor: '#005F41',
+        alignItems: 'center',
+        justifyContent:'center',
+        height:31,
+    },
+
+    active: {
+        backgroundColor: '#09392A',
         alignItems: 'center',
         justifyContent:'center',
         height:31,

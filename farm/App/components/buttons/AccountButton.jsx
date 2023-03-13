@@ -3,31 +3,23 @@ import React from 'react';
 import {
   StyleSheet,
   TouchableOpacity,
-  View,
+  Image
 } from 'react-native';
 
 const AccountButton =( props )=> {
 
     return (
         <TouchableOpacity onPress={ props.press_Action }>
-            <View style={styles.button}></View>
+           <Image style={styles.icon} source={require('../../Assets/Icons/AccHeader.png')}/>
         </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
-    button: {
-        backgroundColor: 'white',
+    icon : {
         height:30,
-        width:30,
-        borderRadius: 20
-    },
-
-    title: {
-        color: '#F8FBFA',
-        fontWeight: 500,
-        fontSize: 20
-    },
+        width:30
+    }
 })
 
 export default AccountButton;

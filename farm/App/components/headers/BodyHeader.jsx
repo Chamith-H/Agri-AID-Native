@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import AccountButton from '../buttons/AccountButton';
+import BackButton from '../buttons/BackButton';
 import AccountPopup from '../popups/AccountPopup';
 
 
@@ -37,8 +38,12 @@ const BodyHeader =( props )=> {
     
     return (
         <View style={styles.body}>
-            <View style={styles.brand}>
-                <Text style={styles.text}>{ props.Title }</Text>
+
+            <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+                <BackButton></BackButton>
+                <View style={styles.brand}>
+                    <Text style={styles.text}>{ props.Title }</Text>
+                </View>
             </View>
 
             <View style={styles.account}>
@@ -62,7 +67,7 @@ const styles = StyleSheet.create({
     text : {
       marginVertical:9,
       color: 'white',
-      fontSize: 32,
+      fontSize: 27,
       fontWeight: 600,
     },
 

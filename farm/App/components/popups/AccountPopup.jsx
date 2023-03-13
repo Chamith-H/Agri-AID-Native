@@ -110,10 +110,10 @@ const styles = StyleSheet.create({
     },
 
     accountLogo: {
-        height:35,
-        width:35,
+        height:30,
+        width:30,
         marginRight:6,
-        marginLeft:7
+        marginLeft:10
     },
 
     name : {

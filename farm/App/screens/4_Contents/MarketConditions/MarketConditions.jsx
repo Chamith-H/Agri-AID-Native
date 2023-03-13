@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import BodyHeader from '../../../components/headers/BodyHeader';
 import DoubleTab from '../../../components/sub-headers/DoubleTab';
 import CurrentMarket from './Tabs/CurrentMarket';
@@ -63,6 +63,7 @@ const MarketConditions =()=> {
                     press_RightAction={()=> setLeftTab(false)}>
             </DoubleTab>
 
+            <ScrollView>
             { !leftTab && (
                 <ForetastedMarket 
                     CropList={cropName} 
@@ -78,6 +79,7 @@ const MarketConditions =()=> {
                     Market={marketData}>
                 </CurrentMarket>
             )}
+            </ScrollView>
         </View>
     ) 
 }

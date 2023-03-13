@@ -87,6 +87,7 @@ const GrowthTracker =()=> {
             <Text style={styles.title}>{crop}</Text>
 
             <DoubleTab 
+                    Mark={leftTab}
                     LeftButton='Workflow Management' 
                     press_LeftAction={()=> setLeftTab(true)}
                     RightButton='Crop Growth Monitoring'

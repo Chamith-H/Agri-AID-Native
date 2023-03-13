@@ -93,19 +93,21 @@ const YieldPredict =()=> {
     }, []);
 
     return (
-        <ScrollView>
+        <View>
             <BodyHeader Title='Yield Predictor'></BodyHeader>
             <Text style={styles.title}>{crop}</Text>
 
             <DoubleTab 
+                    Mark={leftTab}
                     LeftButton='Yield Predictions' 
                     press_LeftAction={()=> setLeftTab(true)}
                     RightButton='Yield Variations'
                     press_RightAction={click_RightTab}>
             </DoubleTab>
 
+            <ScrollView>
             {leftTab && (
-                <View>
+                <View style={{marginBottom:200}}>
                     <View>
                         <View style={{ marginHorizontal:'10%'}}>
                             
@@ -149,9 +151,11 @@ const YieldPredict =()=> {
                     </View>
                 </View>
             )}
+            </ScrollView>
 
+            <ScrollView>
             {!leftTab && !error &&(
-                <View>
+                <View style={{marginBottom:200}}>
                     <View>
                         <View style={{ marginHorizontal:'10%'}}>
                         
@@ -208,7 +212,8 @@ const YieldPredict =()=> {
                     </View>
                 </View>
             )}
-        </ScrollView>
+            </ScrollView>
+        </View>
     )
 }
 
