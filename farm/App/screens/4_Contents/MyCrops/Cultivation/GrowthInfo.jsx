@@ -63,7 +63,7 @@ const GrowthInfo =()=> {
             <ScrollView style={{marginHorizontal:3}}>
             {headings.map((heading, index) => (
                 <View key={index}>
-                    <TouchableOpacity style={styles.selected} onPress={()=> select_Heading(index)}>
+                    <TouchableOpacity style={(expand && selected == index)? styles.active : styles.selected} onPress={()=> select_Heading(index)}>
                         <Text style={{color:'white', fontSize:16}}>{heading}</Text>
 
                         {!expand && (
@@ -267,6 +267,17 @@ const styles = StyleSheet.create({
 
     selected : {
         backgroundColor:'#005F41',
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        marginVertical:2,
+        marginHorizontal:1,
+        paddingVertical:8,
+        paddingHorizontal:5
+    },
+
+    active : {
+        backgroundColor:'#09392A',
         display:'flex',
         flexDirection:'row',
         justifyContent:'space-between',

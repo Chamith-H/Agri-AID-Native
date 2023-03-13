@@ -68,12 +68,13 @@ const HarvestRecord =()=> {
     const record_Data =async()=> {
         if(quantity !=0 && quality !=0 && harvested != 'Pick a date') {
 
+            const complete = new Date(harvested)
             const app_user = new AppUser
             const record =  {
                                 farmer: app_user.fetch().id,
                                 crop:crop,
                                 start:startedDate,
-                                harvested:harvested,
+                                harvested:complete.toISOString().slice(0,10),
                                 quantity:quantity,
                                 quality:quality
                             }

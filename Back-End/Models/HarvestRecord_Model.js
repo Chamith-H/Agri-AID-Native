@@ -4,7 +4,7 @@ const harvestSchema = {
     farmer:String,
     crop:String,
     start:String,
-    harvested:Date,
+    harvested:String,
     quantity:Number,
     quality:String
 }
