@@ -30,23 +30,25 @@ const HoriontalScroller =( props )=> {
         setSelected(page)
     }
 
-    // 
+    
     return (
-        <View>
+        <View style={{marginHorizontal:'15%'}}>
             <Text style={styles.text}>Recommended Crops</Text>
 
             { props.CropList[0] != ['_DEFAULT'] && 
                 <View style={styles.view}>
-                    {_chunks[selected].map((item)=> (
-                        <CropData Icon={item.image} Name={item.name}></CropData>
+                    {_chunks[selected].map((item, index)=> (
+                        <View key={index}>
+                            <CropData Icon={item.image} Name={item.name}></CropData>
+                        </View>
                     ))}
                 </View> 
             }
 
             { props.CropList[0] != ['_DEFAULT'] && 
                 <View style={styles.pageNumRow}>
-                    {_pages.map((page)=> (
-                        <TouchableOpacity onPress={()=> go_Next(page)}>
+                    {_pages.map((page, index)=> (
+                        <TouchableOpacity onPress={()=> go_Next(page)} key={index}>
                             <View style={styles.pageNumber}><Text style={styles.number}>{page+1}</Text></View>
                         </TouchableOpacity>
                     ))}
@@ -69,7 +71,9 @@ const styles = StyleSheet.create({
 
 
     text : {
-        color:'black'
+        color:'black',
+        fontSize:18,
+        fontWeight:800
     },
 
     items: {
@@ -90,15 +94,17 @@ const styles = StyleSheet.create({
     pageNumber : {
         height:27,
         width:24,
-        backgroundColor:'blue',
+        backgroundColor:'#1E8341',
         display:'flex',
         justifyContent:'center',
         alignItems:'center',
-        marginHorizontal:2
+        marginHorizontal:2,
+        borderRadius:5
     },
 
     number: {
         color:'white',
+        fontWeight:800
     }
 })
 

@@ -3,14 +3,15 @@ import React from 'react';
 import {
   StyleSheet,
   View,
-  Text
+  Text,
+  Image
 } from 'react-native';
 
 const CropData =( props )=> {
 
     return (
         <View style={styles.row}>
-            <Text style={styles.text}>{props.Icon}</Text>
+            <Image style={{height:80, width:80}} source={{ uri: props.Icon }}/>
             <Text style={styles.text}>{props.Name}</Text>
         </View>
     )
@@ -22,11 +23,12 @@ const styles = StyleSheet.create({
         display:'flex',
         flexDirection:'row',
         justifyContent:'space-between',
-        backgroundColor:'yellow'
+        alignItems:'center'
     },
 
     text : {
-        color:'black'
+        color:'black',
+        fontSize:15
     }
 })
 

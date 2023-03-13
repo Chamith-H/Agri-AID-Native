@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
-  Button,
+  ScrollView,
   View,
   Text,
 } from 'react-native';
@@ -98,7 +98,7 @@ const HarvestRecord =()=> {
     }, []);
 
     return (
-        <View>
+        <ScrollView>
             <BodyHeader Title='Harvest Recorder'></BodyHeader>
             <Text style={styles.title}>{crop}</Text>
 
@@ -149,7 +149,7 @@ const HarvestRecord =()=> {
                 </View>
             </View>
 
-            <View style={{flexDirection:'row', display:'flex', justifyContent:'center', marginTop:50}}>
+            <View style={{flexDirection:'row', display:'flex', justifyContent:'center', marginTop:50, marginBottom:60}}>
                 <View style={{display:'flex', width:140}}>
                     <PositiveButton Title='Complete' press_Action={record_Data}></PositiveButton>
                 </View>
@@ -166,7 +166,7 @@ const HarvestRecord =()=> {
                     onChange={handleTimeSelection}
                 />
             )}
-        </View>
+        </ScrollView>
     )
 }
 

@@ -4,7 +4,8 @@ import {
   StyleSheet,
   TextInput,
   View,
-  Text
+  Text,
+  ScrollView
 } from 'react-native';
 import BodyHeader from '../../../../components/headers/BodyHeader';
 import SelectedCrop from '../../../../StaticData/SelectedCrop';
@@ -92,7 +93,7 @@ const YieldPredict =()=> {
     }, []);
 
     return (
-        <View>
+        <ScrollView>
             <BodyHeader Title='Yield Predictor'></BodyHeader>
             <Text style={styles.title}>{crop}</Text>
 
@@ -133,7 +134,7 @@ const YieldPredict =()=> {
                         </View>
                     </View>
 
-                    <View style={{marginHorizontal:'5%', marginTop:50}}>
+                    <View style={{marginHorizontal:'5%', marginTop:50, marginBottom:60}}>
                         <View style={{borderStyle:'solid', borderWidth:2, borderColor:'black', paddingHorizontal:'5%', paddingVertical:25, backgroundColor:'#F1F5F2'}}>
                             <Text style={{color:'black', fontSize:20, fontWeight:800}}>Generated Yield Prediction</Text>
 
@@ -188,7 +189,7 @@ const YieldPredict =()=> {
                         </View>
                     </View>
 
-                    <View style={{marginHorizontal:'5%', marginTop:50}}>
+                    <View style={{marginHorizontal:'5%', marginTop:50, marginBottom:60}}>
                         <View style={{borderStyle:'solid', borderWidth:2, borderColor:'black', paddingHorizontal:'5%', paddingVertical:25, backgroundColor:'#F1F5F2'}}>
                             <Text style={{color:'black', fontSize:20, fontWeight:800}}>Generated Yield Variation</Text>
 
@@ -207,7 +208,7 @@ const YieldPredict =()=> {
                     </View>
                 </View>
             )}
-        </View>
+        </ScrollView>
     )
 }
 

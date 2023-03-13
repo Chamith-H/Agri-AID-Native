@@ -12,6 +12,7 @@ import {
 import SelectionDropdown from '../../../components/inputs/SelectionDropdown';
 import PositiveButton from '../../../components/buttons/PositiveButton';
 import NegativeButton from '../../../components/buttons/NegativeButton';
+import RNDateTimePicker from '@react-native-community/datetimepicker';
 
 const CropPopup =( props )=> {
     const { height } = useWindowDimensions();
@@ -22,6 +23,10 @@ const CropPopup =( props )=> {
 
     const [crops, setCrops] = useState([])
     const [selected, setSelected] = useState('')
+
+    const [started, setStarted] = useState('Choose the date')
+    const [selectedDate, setSelectedDate] = useState(new Date())
+    const [calender, setCalender] = useState(false)
 
     const [selectedData, setSelectedData] = useState()
     const [period, setPeriod] = useState()
@@ -73,6 +78,14 @@ const CropPopup =( props )=> {
         setTwo(false)
     }
 
+    const get_StartedDate =(event, selected)=> {
+        setCalender(false)
+        const currentTime = selected || selectedDate;
+        setSelectedDate(currentTime);
+        const dateString = currentTime.toISOString().slice(0,10)
+        setStarted(dateString)
+    }
+
     useEffect(() => {
 
         const get_Crops =async()=> {
@@ -96,7 +109,7 @@ const CropPopup =( props )=> {
         <View style={[styles.popup, {height}]}>
             <View style={styles.popupAction}>
                 <View style={styles.popupTitle}>
-                    <Text style={{color:'black'}}>Add Crop</Text>
+                    <Text style={{color:'black', fontSize:17, fontWeight:800}}>Add Crop</Text>
                     <TouchableOpacity onPress={props.press_Action}><Text style={{color:'black'}}>X</Text></TouchableOpacity>
                 </View>
 
@@ -107,7 +120,9 @@ const CropPopup =( props )=> {
                                 <Image style={styles.navImg} source={require('../../../Assets/Icons/one.png')}/>
                             </View>
 
-                            <SelectionDropdown Label='Select Crop' List={crops} Selected={setSelected}></SelectionDropdown>
+                            <View style={{marginHorizontal:20}}>
+                                <SelectionDropdown Label='Select Crop' List={crops} Selected={setSelected}></SelectionDropdown>
+                            </View>
 
                             <View style={{paddingHorizontal:90, paddingVertical:30}}>
                                 <PositiveButton Title='Enter' press_Action={first_Done}></PositiveButton>
@@ -121,24 +136,25 @@ const CropPopup =( props )=> {
                                 <Image style={styles.navImg} source={require('../../../Assets/Icons/two.png')}/>
                             </View>
 
-                            <View>
-                                <Text style={{color:'black'}}>Select Crop : {selected}</Text>
+                            <View style={{alignItems:'center'}}>
+                                <Image style={{height:130, width:130}} source={{ uri: selectedData.image }}/>
+                                <Text style={{color:'black', fontSize:20, fontWeight:800, marginBottom:30}}>{selected}</Text>
                             </View>
 
                             <View style={{display:'flex', flexDirection:'row', justifyContent:'center'}}><Text style={{color:'black', fontSize:16, fontWeight:800}}>Crop Requirements</Text></View>
 
-                            <View>
-                                <Text style={{color:'black'}}>Irrigation: <Text style={{color:'grey'}}>{selectedData.requirements.Irrigation}</Text></Text>
-                                <Text style={{color:'black'}}>Fertilier: <Text style={{color:'grey'}}>{selectedData.requirements.Fertilizer}</Text></Text>
-                                <Text style={{color:'black'}}>Pest Threats: <Text style={{color:'grey'}}>{selectedData.requirements.Pest_Threats}</Text></Text>
-                                <Text style={{color:'black'}}>Diseases: <Text style={{color:'grey'}}>{selectedData.requirements.Diseases}</Text></Text>
-                                <Text style={{color:'black'}}>Ideal Cultivation Locations: <Text style={{color:'grey'}}>{selectedData.requirements.Ideal_Cultivation_Locations}</Text></Text>
-                                <Text style={{color:'black'}}>Ideal Cultivation Time: <Text style={{color:'grey'}}>{selectedData.requirements.Ideal_Cultivation_Time}</Text></Text>
-                                <Text style={{color:'black'}}>Maturity Period: <Text style={{color:'grey'}}>{selectedData.requirements.Maturity_Period}</Text></Text>
-                                <Text style={{color:'black'}}>Average Yield: <Text style={{color:'grey'}}>{selectedData.requirements.Average_Yield}</Text></Text>
+                            <View style={{marginLeft:20, marginTop:5}}>
+                                <Text style={{color:'black', fontSize:15}}>Irrigation: <Text style={{color:'grey'}}>{selectedData.requirements.Irrigation}</Text></Text>
+                                <Text style={{color:'black', fontSize:15}}>Fertilier: <Text style={{color:'grey'}}>{selectedData.requirements.Fertilizer}</Text></Text>
+                                <Text style={{color:'black', fontSize:15}}>Pest Threats: <Text style={{color:'grey'}}>{selectedData.requirements.Pest_Threats}</Text></Text>
+                                <Text style={{color:'black', fontSize:15}}>Diseases: <Text style={{color:'grey'}}>{selectedData.requirements.Diseases}</Text></Text>
+                                <Text style={{color:'black', fontSize:15}}>Ideal Cultivation Districts: <Text style={{color:'grey'}}>{selectedData.requirements.Ideal_Cultivation_Locations}</Text></Text>
+                                <Text style={{color:'black', fontSize:15}}>Ideal Cultivation Time: <Text style={{color:'grey'}}>{selectedData.requirements.Ideal_Cultivation_Time}</Text></Text>
+                                <Text style={{color:'black', fontSize:15}}>Maturity Period: <Text style={{color:'grey'}}>{selectedData.requirements.Maturity_Period}</Text></Text>
+                                <Text style={{color:'black', fontSize:15}}>Average Yield: <Text style={{color:'grey'}}>{selectedData.requirements.Average_Yield}</Text></Text>
                             </View>
 
-                            <View style={{display:'flex', flexDirection:'row', justifyContent:'center'}}>
+                            <View style={{display:'flex', flexDirection:'row', justifyContent:'center', marginVertical:40}}>
                                 <View style={{width:120, marginRight:10}}><PositiveButton Title='Add Crop' press_Action={second_Done}></PositiveButton></View>
                                 <View style={{width:120}}><NegativeButton Title='Back' press_Action={get_Back}></NegativeButton></View> 
                             </View>
@@ -151,14 +167,28 @@ const CropPopup =( props )=> {
                                 <Image style={styles.navImg} source={require('../../../Assets/Icons/three.png')}/>
                             </View>
 
-                            <View>
-                                <Text style={{color:'black'}}>Set Cultivation{'\n'}Start Date</Text>
-                                {/* EDIT */}
+                            <View style={{display:'flex', flexDirection:'row', marginLeft:'8%'}}>
+                                <Text style={{color:'black', fontWeight:800}}>Set Cultivation{'\n'}Start Date</Text>
+                                <View style={{borderStyle:'solid',height:40, borderWidth:2, borderColor:'black', borderRadius:8, backgroundColor:'white',display:'flex', flexDirection:'row', justifyContent:'space-between', paddingLeft:10, paddingRight:5,paddingVertical:6, marginLeft:10, width:'60%',alignItems:'center'}}>
+                                    <Text style={{color:'grey', fontSize:16}}>{started}</Text>
+                    
+                                    <TouchableOpacity onPress={()=> setCalender(true)}>
+                                        <Image style={{height:28, width:28}} source={require('../../../Assets/Icons/Calender.png')}/>
+                                    </TouchableOpacity>
+                                </View>
                             </View>
 
                             <View style={{paddingHorizontal:90, paddingVertical:30}}>
                                 <PositiveButton Title='Enter' press_Action={third_Done}></PositiveButton>
                             </View>
+
+                            {calender && (
+                                <RNDateTimePicker
+                                    mode="date"
+                                    value={selectedDate}
+                                    onChange={get_StartedDate}
+                                />
+                            )}
                         </View>
                     )}
                 </View>
@@ -190,7 +220,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:10,
         paddingVertical:6,
         borderBottomStyle:'solid',
-        borderWidth:1
+        borderBottomWidth:1
     },
 
     navImg : {

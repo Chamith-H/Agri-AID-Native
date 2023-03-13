@@ -245,7 +245,7 @@ const Management =( props )=> {
     
 
     return (
-        <View style={{marginHorizontal:10}}>
+        <ScrollView style={{marginHorizontal:10}}>
             <View style={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', marginVertical:8}}>
                 <Text style={styles.title}>Activity Calender</Text>
                 <TouchableOpacity onPress={()=>setReload(true)}><Image style={styles.options} source={require('../../../../../Assets/Icons/Refresh.png')}/></TouchableOpacity>
@@ -267,18 +267,26 @@ const Management =( props )=> {
                         if(activity === 'weed') {
                             return (
                                 <View key={index}>
-                                    <View style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
+                                    <TouchableOpacity onPress={()=>setWeedExpand(!weedExpand)} style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
                                         <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                                             <View style={{height:15, width:15, borderStyle:'solid', borderWidth:2, borderColor:'white', marginLeft:15}}></View>
                                             <Text style={{color:'white', fontSize:19, fontWeight:500, marginLeft:8}}>T0{index+1} | Weeding</Text>
                                         </View>
-                                        <TouchableOpacity onPress={()=>setWeedExpand(!weedExpand)}><Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/></TouchableOpacity>
-                                    </View>
+
+                                        {!weedExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/>
+                                        )}
+
+                                        {weedExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Expand_W.png')}/>
+                                        )}
+                                        
+                                    </TouchableOpacity>
 
                                     {weedExpand && (
                                         <View style={{marginVertical:8, marginHorizontal:5}}>
                                             <Text style={{color:'black', fontSize:16, fontWeight:800}}>Description</Text>
-                                            <Text style={{color:'grey', fontSize:16}}>Not seeing what you expected here? Don't worry, your conversation data is preserved! Check back soon.</Text>
+                                            <Text style={{color:'grey', fontSize:15, textAlign: 'justify'}}>{props.Actions.weeding.description}</Text>
 
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
@@ -296,18 +304,25 @@ const Management =( props )=> {
                         if(activity === 'soil') {
                             return (
                                 <View key={index}>
-                                    <View style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
+                                    <TouchableOpacity onPress={()=>setSoilExpand(!soilExpand)} style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
                                         <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                                             <View style={{height:15, width:15, borderStyle:'solid', borderWidth:2, borderColor:'white', marginLeft:15}}></View>
                                             <Text style={{color:'white', fontSize:19, fontWeight:500, marginLeft:8}}>T0{index+1} | Soiling</Text>
                                         </View>
-                                        <TouchableOpacity onPress={()=>setSoilExpand(!soilExpand)}><Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/></TouchableOpacity>
-                                    </View>
+                                        
+                                        {!soilExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/>
+                                        )}
+
+                                        {soilExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Expand_W.png')}/>
+                                        )}
+                                    </TouchableOpacity>
 
                                     {soilExpand && (
                                         <View style={{marginVertical:8, marginHorizontal:5}}>
                                             <Text style={{color:'black', fontSize:16, fontWeight:800}}>Description</Text>
-                                            <Text style={{color:'grey', fontSize:16}}>Not seeing what you expected here? Don't worry, your conversation data is preserved! Check back soon.</Text>
+                                            <Text style={{color:'grey', fontSize:15, textAlign: 'justify'}}>{props.Actions.soiling.description}</Text>
 
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
@@ -325,18 +340,25 @@ const Management =( props )=> {
                         if(activity === 'prune') {
                             return (
                                 <View key={index}>
-                                    <View style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
+                                    <TouchableOpacity onPress={()=>setPruneExpand(!pruneExpand)} style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
                                         <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                                             <View style={{height:15, width:15, borderStyle:'solid', borderWidth:2, borderColor:'white', marginLeft:15}}></View>
                                             <Text style={{color:'white', fontSize:19, fontWeight:500, marginLeft:8}}>T0{index+1} | Pruning</Text>
                                         </View>
-                                        <TouchableOpacity onPress={()=>setPruneExpand(!pruneExpand)}><Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/></TouchableOpacity>
-                                    </View>
+                                        
+                                        {!pruneExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/>
+                                        )}
+
+                                        {pruneExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Expand_W.png')}/>
+                                        )}
+                                    </TouchableOpacity>
 
                                     {pruneExpand && (
                                         <View style={{marginVertical:8, marginHorizontal:5}}>
                                             <Text style={{color:'black', fontSize:16, fontWeight:800}}>Description</Text>
-                                            <Text style={{color:'grey', fontSize:16}}>Not seeing what you expected here? Don't worry, your conversation data is preserved! Check back soon.</Text>
+                                            <Text style={{color:'grey', fontSize:15, textAlign: 'justify'}}>{props.Actions.pruning.description}</Text>
 
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
@@ -354,18 +376,25 @@ const Management =( props )=> {
                         if(activity === 'irrigate') {
                             return (
                                 <View key={index}>
-                                    <View style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
+                                    <TouchableOpacity onPress={()=>setIrrigateExpand(!irrigateExpand)} style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
                                         <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                                             <View style={{height:15, width:15, borderStyle:'solid', borderWidth:2, borderColor:'white', marginLeft:15}}></View>
                                             <Text style={{color:'white', fontSize:19, fontWeight:500, marginLeft:8}}>T0{index+1} | Irrigation</Text>
                                         </View>
-                                        <TouchableOpacity onPress={()=>setIrrigateExpand(!irrigateExpand)}><Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/></TouchableOpacity>
-                                    </View>
+                                        
+                                        {!irrigateExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/>
+                                        )}
+
+                                        {irrigateExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Expand_W.png')}/>
+                                        )}
+                                    </TouchableOpacity>
 
                                     {irrigateExpand && (
                                         <View style={{marginVertical:8, marginHorizontal:5}}>
                                             <Text style={{color:'black', fontSize:16, fontWeight:800}}>Description</Text>
-                                            <Text style={{color:'grey', fontSize:16}}>Not seeing what you expected here? Don't worry, your conversation data is preserved! Check back soon.</Text>
+                                            <Text style={{color:'grey', fontSize:16, fontSize:15, textAlign: 'justify'}}>{props.Actions.irrigation.description}</Text>
 
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
@@ -383,18 +412,25 @@ const Management =( props )=> {
                         if(activity === 'fertilize') {
                             return (
                                 <View key={index}>
-                                    <View style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
+                                    <TouchableOpacity onPress={()=>setFertilieExpand(!fertilieExpand)} style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
                                         <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                                             <View style={{height:15, width:15, borderStyle:'solid', borderWidth:2, borderColor:'white', marginLeft:15}}></View>
                                             <Text style={{color:'white', fontSize:19, fontWeight:500, marginLeft:8}}>T0{index+1} | Fertiliation</Text>
                                         </View>
-                                        <TouchableOpacity onPress={()=>setFertilieExpand(!fertilieExpand)}><Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/></TouchableOpacity>
-                                    </View>
+                                        
+                                        {!fertilieExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/>
+                                        )}
+
+                                        {fertilieExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Expand_W.png')}/>
+                                        )}
+                                    </TouchableOpacity>
 
                                     {fertilieExpand && (
                                         <View style={{marginVertical:8, marginHorizontal:5}}>
                                             <Text style={{color:'black', fontSize:16, fontWeight:800}}>Description</Text>
-                                            <Text style={{color:'grey', fontSize:16}}>Not seeing what you expected here? Don't worry, your conversation data is preserved! Check back soon.</Text>
+                                            <Text style={{color:'grey', fontSize:16, fontSize:15, textAlign: 'justify'}}>{props.Actions.fertilization.description}</Text>
 
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
@@ -412,18 +448,25 @@ const Management =( props )=> {
                         if(activity === 'harvest') {
                             return (
                                 <View key={index}>
-                                    <View style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
+                                    <TouchableOpacity onPress={()=>setHarvestExpand(!harvestExpand)} style={{backgroundColor:'#005F41', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingVertical:6, marginTop:5}}>
                                         <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                                             <View style={{height:15, width:15, borderStyle:'solid', borderWidth:2, borderColor:'white', marginLeft:15}}></View>
                                             <Text style={{color:'white', fontSize:19, fontWeight:500, marginLeft:8}}>T0{index+1} | Harvesting</Text>
                                         </View>
-                                        <TouchableOpacity onPress={()=>setHarvestExpand(!harvestExpand)}><Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/></TouchableOpacity>
-                                    </View>
+                                        
+                                        {!harvestExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Collapse.png')}/>
+                                        )}
+
+                                        {harvestExpand && (
+                                            <Image style={styles.options} source={require('../../../../../Assets/Icons/Expand_W.png')}/>
+                                        )}
+                                    </TouchableOpacity>
 
                                     {harvestExpand && (
                                         <View style={{marginVertical:8, marginHorizontal:5}}>
                                             <Text style={{color:'black', fontSize:16, fontWeight:800}}>Description</Text>
-                                            <Text style={{color:'grey', fontSize:16}}>Not seeing what you expected here? Don't worry, your conversation data is preserved! Check back soon.</Text>
+                                            <Text style={{color:'grey', fontSize:15, textAlign: 'justify'}}>{props.Actions.harvesting.description}</Text>
 
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
@@ -441,7 +484,7 @@ const Management =( props )=> {
                 </ScrollView>
             )}
             
-        </View>
+        </ScrollView>
     )
 }
 

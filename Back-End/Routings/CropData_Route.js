@@ -27,37 +27,43 @@ router.route("/add").post((req, res) => {
             weeding: {
                         start : 0,
                         gap : 7,
-                        end : 112
+                        end : 112,
+                        description:'Weeding for Capsicum involves removing unwanted plants (weeds) from the area around the Capsicum plants. Weeds can compete with Capsicum plants for nutrients, water, and sunlight, leading to reduced growth and yield. Therefore, weeding is an important practice to ensure the healthy growth and optimal yield of Capsicum plants.'
                      },
 
             soiling: {
                         start : 0,
                         gap : 7,
-                        end : 112
+                        end : 112,
+                        description:'Soil preparation for Capsicum plants refers to the process of preparing the soil to create an ideal growing environment for the crop. It involves a range of activities such as removing any debris/rocks from the soil surface, loosening the soil and adding organic matter such as compost and manure. Soil preparation for Capsicum plants is critical to establish a strong root system, access essential nutrients, and resist diseases and pests in an effort to optimize the plant growth, health, and yield.'
                      },
 
             pruning: {
                         start : 42,
                         gap : 7,
-                        end : 112
+                        end : 112,
+                        description:'Capsicum pruning is the process of selectively removing certain parts of the Capsicum plant in order to improve its growth, yield, and overall health. This can involve removing diseased or damaged leaves and fruit, as well as thinning out branches to promote better air circulation and light penetration. Pruning can also help to encourage bushier growth and prevent the plant from becoming too tall.'
                      },
 
             irrigation: {
                         start : 0,
                         gap : 3,
-                        end : 112
+                        end : 112,
+                        description:'Irrigation for Capsicum plants refers to the process of watering plants to maintain optimal soil moisture levels as it is crucial for the healthy growth and development of the crops, as they require consistent and adequate moisture levels throughout their different growth stages.'
                      },
 
             fertilization: {
                         start : 0,
                         gap : 14,
-                        end : 112
+                        end : 112,
+                        description:"Fertilization for Capsicum plants involves providing the necessary nutrients to support healthy growth and development using TSP, Urea, and MOP, which provide different macronutrients. It's important to apply fertilizers at the right time and in the right amounts, as both over and under fertilization can lead to poor growth and low yields of Capsicum plants."
                      },
 
             harvesting: {
                         start : 84,
                         gap : 7,
-                        end : 112
+                        end : 112,
+                        description:'Harvesting Capsicum peppers refers to the process of removing the mature fruit from the plant for sale or consumption. The peppers are typically harvested when they reach the desired maturity and size by carefully plucking the matured produce and following proper packaging and storage practices to prevent spoilage.'
                      },
         },
 
@@ -105,30 +111,35 @@ router.route("/add").post((req, res) => {
 
         cultivation: [
             {
+                stage:'Seeding',
                 weeding: 'During the seeding stage, it is important to keep the soil in the pots free from weeds. Weeds can compete with the young seedlings for nutrients and moisture, which can stunt their growth. Weeding should be done manually or using a shallow hoe to avoid damaging the seedlings.',
                 soil: 'During the seeding stage, the soil should be well-drained and fertile. Prepare the soil by adding organic matter such as compost and manure for optimal results.',
                 pruning: ''
             },
 
             {
+                stage:'Vegetative',
                 weeding: 'During the vegetative stage, Capsicum plants grow rapidly, and it is important to keep the weeds under control. Weeds can still compete with the plants for nutrients and moisture. Weeding should be done manually or using a shallow hoe to avoid damaging the plant.',
                 soil: 'During the vegetative stage, the soil should be kept moist but not waterlogged. Adding a layer of mulch on the soil surface can help retain moisture and suppress weed growth. ',
                 pruning: ''
             },
 
             {
+                stage:'Flowering',
                 weeding: 'During the flowering stage, it is important to maintain a weed-free environment to ensure healthy plant growth as weeds can still compete with the plants for nutrients and moisture. Weeding should be done manually or using a shallow hoe to avoid damaging the plant.',
                 soil: 'During the flowering stage, the soil should be kept moist but not waterlogged. Adding a layer of mulch on the soil surface can help retain moisture and suppress weed growth. ',
                 pruning: 'During the flowering stage, it is important to remove any damaged or diseased leaves.'
             },
 
             {
+                stage:'Fruit Development',
                 weeding: 'During the fruit development stage, it is important to maintain a weed-free environment to ensure healthy plant growth and optimal yield as weeds can still compete with the plants for nutrients and moisture. Weeding should be done manually or using a shallow hoe to avoid damaging the plant.',
                 soil: 'During the fruit development stage, the soil should be kept moist but not waterlogged. Adding a layer of mulch on the soil surface can help retain moisture and suppress weed growth. ',
                 pruning: "During the fruit development stage, it is important to remove any damaged or diseased leaves, as well as any fruit that is misshapen or small to help direct the plant's energy towards the remaining healthy fruit. Any lower branches that are not producing fruit could be pinched off as well."
             },
 
             {
+                stage:'Harvesting',
                 weeding: 'During the harvesting stage, it is important to continue weeding to maintain a clean growing environment for the remaining plants. Weeds can still compete with the plants for nutrients and moisture, which can affect the quality of the produce. Weeding should be done manually or using a shallow hoe to avoid damaging the plant.',
                 soil: 'During the harvesting stage, the soil should be kept moist but not waterlogged. Adding a layer of mulch on the soil surface can help retain moisture and suppress weed growth. ',
                 pruning: "During the harvesting stage, it is important to remove any damaged or diseased leaves, any fruit that is misshapen or any overripe fruit starting to decay to help direct the plant's energy towards the remaining healthy fruit and to also eliminate the attraction of pests and diseases."
@@ -138,6 +149,7 @@ router.route("/add").post((req, res) => {
 
         growth : [
             {
+                stage:'Seeding',
                 irrigation: 'During the seeding stage, it is important to keep the soil moist but not waterlogged. Water the seeds with a gentle mist or a fine spray using a watering can or a misting system to avoid overwatering.',
                 fertiliation: 'During the seeding stage, a light application of urea fertilizer can be applied to the soil to provide nitrogen for healthy growth. The recommended rate is 1g per plant, once every two weeks.',
                 nutrient: 'During the seeding stage, a light application of nitrogen (N), phosphorus (P), and potassium (K). The recommended application rate is 1g per plant (20:20:20 NPK), once every two weeks.',
@@ -145,6 +157,7 @@ router.route("/add").post((req, res) => {
             },
 
             {
+                stage:'Vegetative',
                 irrigation: 'During the vegetative stage, Capsicum plants should be watered regularly and thoroughly, so that the soil is moist but not saturated.',
                 fertiliation: 'During the vegetative stage, a balanced fertilizer such as TSP (Triple Super Phosphate) can be applied to the soil to promote leaf growth and stem development. The recommended fertilizer rate is 3g per plant, once every two weeks.',
                 nutrient: 'During the vegetative stage, Capsicum plants require more nitrogen (N) to support their growth. The recommended application rate is 3g per plant (20:20:20 NPK), once every two weeks.',
@@ -152,6 +165,7 @@ router.route("/add").post((req, res) => {
             },
 
             {
+                stage:'Flowering',
                 irrigation: 'During the flowering stage, it is important to maintain a consistent level of soil moisture. Water the Capsicum plants regularly and thoroughly to ensure that the water reaches the roots. However, avoid watering the foliage and overwatering.',
                 fertiliation: 'During the flowering stage, a balanced fertilizer such as TSP (Triple Super Phosphate) can be applied for healthy flower development. The recommended fertilizer rate is 4g per plant, once every two weeks.',
                 nutrient: 'During the flowering stage, Capsicum plants require more phosphorus (P) and potassium (K) to support flower and fruit development. The recommended application rate is 4g per plant (10:30:20 NPK), once every two weeks.',
@@ -159,6 +173,7 @@ router.route("/add").post((req, res) => {
             },
 
             {
+                stage:'Fruit Development',
                 irrigation: 'During the fruit development stage, it is important to maintain a consistent level of soil moisture. However, prevent overwatering and saturation. ',
                 fertiliation: 'During the fruit development stage, a balanced fertilizer such as MOP (Muriate of Potash) can be applied to the soil to promote healthy fruit development. The recommended fertilizer rate is 4g per plant, once every two weeks.',
                 nutrient: 'During the fruit development stage, Capsicum plants require more potassium (K) to support fruit growth and quality. The recommended application rate is 5g per plant (12:12:36), once every two weeks.',
@@ -166,6 +181,7 @@ router.route("/add").post((req, res) => {
             },
 
             {
+                stage:'Harvesting',
                 irrigation: 'During the harvesting stage, it is important to reduce the amount of water to prevent the fruit from splitting. ',
                 fertiliation: 'During the harvesting stage, a lower dose of a balanced fertilizer such as TSP (Triple Super Phosphate) can be applied to support the continued growth and development of new flowers and fruits. The recommended fertilizer rate is 3g per plant, once every two weeks.',
                 nutrient: 'During the harvesting stage, Capsicum plants only require lower amounts nitrogen (N), phosphorus (P), and potassium (K). The recommended application rate is 2g per plant (20:20:20 NPK), once every two weeks.',
@@ -223,9 +239,30 @@ router.route("/add").post((req, res) => {
 
         harvest : {
             time : 'First harvesting can be done approximately 84 days after planting. Practice harvesting in dry weather conditions.',
-            grading : ['The products under this grade are typically uniform in size (Pod length 13-15 cm Pod weight 35-40g), shape, colour, and texture and are free from any defects or blemishes.', 'The products under this grade do not meet the strict requirements of Grade A as they may have some minor defects, such as small blemishes or slight variations in size or colour.', 'The products under this grade have more defects than Grade B as they may have significant blemishes, deformities, or discolorations.', 'The products under this grade are damaged, spoiled or contaminated and are therefore not fit for human consumption or use.'],
             storage : "To store capsicums after harvest, it's important to keep them in a cool, dry place away from direct sunlight, ideally between 10-12°C. As capsicums are sensitive to moisture, it's crucial to ensure they stay dry during storage. It's also best to store capsicums separately from other produce as they release ethylene gas, which can cause other fruits and vegetables to ripen and spoil faster. If using containers, choose breathable options such as mesh bags or perforated plastic bags to allow for air circulation and prevent moisture build-up.",
             packing : "To package capsicum begin by cleaning the harvest and removing any dirt or debris. Next, use food-grade plastic bags or breathable containers made for storing vegetables, ensuring they're clean, dry, and free of any contaminants. Carefully place the capsicums in the packaging, taking care not to bruise or damage them. If using plastic bags, make sure to remove as much air as possible before sealing. Label the packaging with relevant information such as the date of harvest, capsicum variety, and grade.",
+            grading : [
+                            {
+                                grade: 'A',
+                                status: 'The products under this grade are typically uniform in size (Pod length 13-15 cm Pod weight 35-40g), shape, colour, and texture and are free from any defects or blemishes.'
+                            },
+
+                            {
+                                grade: 'B',
+                                status:  'The products under this grade do not meet the strict requirements of Grade A as they may have some minor defects, such as small blemishes or slight variations in size or colour.', 
+                            },
+
+                            {
+                                grade: 'C',
+                                status: 'The products under this grade have more defects than Grade B as they may have significant blemishes, deformities, or discolorations.', 
+                            },
+
+                            {
+                                grade: 'D',
+                                status:  'The products under this grade are damaged, spoiled or contaminated and are therefore not fit for human consumption or use.'
+                            },
+                  
+                      ]
         }
 
     })

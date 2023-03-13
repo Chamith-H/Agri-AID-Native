@@ -8,6 +8,7 @@ import {
   StyleSheet,
   View,
   Text,
+  ScrollView
 } from 'react-native';
 import HoriontalScroller from '../../../components/grids/HoriontalScroller';
 
@@ -52,7 +53,7 @@ const CropRecommendations =()=> {
     }
 
     return (
-        <View>
+        <ScrollView style={{backgroundColor:'white', flex:1}}>
             <BodyHeader Title='Crop Recommendations'></BodyHeader>
 
             <View style={styles.form}>
@@ -67,7 +68,7 @@ const CropRecommendations =()=> {
             <View style={{width:'100%'}}>
                 <HoriontalScroller CropList={crops}></HoriontalScroller>
             </View>
-        </View>
+        </ScrollView>
     )
 }
 

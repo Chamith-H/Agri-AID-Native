@@ -102,7 +102,7 @@ const MyCrops =({ navigation })=> {
             
             <BodyHeader Title='My Crops'></BodyHeader>
             
-            <View>
+            <View style={{marginHorizontal:7}}>
                 <Text style={styles.text}>Crop Cultivation Plan</Text>
 
                 <View style={styles.grid}>
@@ -114,7 +114,7 @@ const MyCrops =({ navigation })=> {
 
                     {crops.map((crop, index) => (
                         <View style={styles.list} key={index}>
-                            <TouchableOpacity onPress={()=> plan_Cultivation(crop.crop)}><Text style={styles.item}>{crop.crop}</Text></TouchableOpacity>
+                            <TouchableOpacity onPress={()=> plan_Cultivation(crop.crop)}><Text style={{color:'black', fontWeight:800}}>{crop.crop}</Text></TouchableOpacity>
                             <Text style={styles.item}>{crop.begin.slice(0,10)}</Text>
                             <Text style={styles.item}>{crop.end.slice(0,10)}</Text>
                             <TouchableOpacity onPress={() => get_Remove(crop.crop)}><Image style={styles.options} source={require('../../../Assets/Icons/Delete.png')}/></TouchableOpacity>
@@ -146,10 +146,14 @@ const styles = StyleSheet.create({
 
     text: {
         color:'black',
-        fontSize:20
+        fontSize:20,
+        fontWeight:800,
+        marginTop:20,
+        marginBottom:8
     },
 
     list : {
+        marginHorizontal:3,
         display:'flex',
         flexDirection:'row',
         justifyContent:'space-between',
