@@ -276,7 +276,6 @@ router.route("/add").post((req, res) => {
 //API 2 - Get crop names
 router.route("/cropList").get( async(req, res) => { 
     try {
-        
         const crops = await dataModel.distinct('name')
 
         if(crops != null) {
@@ -293,7 +292,6 @@ router.route("/cropList").get( async(req, res) => {
 //API 3 - Get crop Data with all details
 router.route("/allCrops").post( async(req, res) => { 
     try {
-        
         const crops = await dataModel.find({})
 
         if(crops != null) {
@@ -310,7 +308,6 @@ router.route("/allCrops").post( async(req, res) => {
 //API 4 - Get selected crop data set by name
 router.route("/selectedCrop").post( async(req, res) => { 
     try {
-        
         const crop = await dataModel.find({name:req.body.name})
 
         if(crop != null) {
