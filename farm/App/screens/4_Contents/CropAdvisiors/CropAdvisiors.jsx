@@ -150,8 +150,8 @@ const CropAdvisiors =()=> {
                     </View>
 
                     <View>
-                        {advisiors.map((advisior)=> (
-                            <View style={styles.title}>
+                        {advisiors.map((advisior, index)=> (
+                            <View key={index} style={styles.title}>
                                 <View style={styles.name}>
                                     <Image style={styles.image} source={require('../../../Assets/Icons/Account.png')}/>
                                     <Text style={styles.content_1}>{advisior.name}</Text>
@@ -177,6 +177,7 @@ const CropAdvisiors =()=> {
                         <View>
                             {allMessages.map((sender, index) => (
                                 <Receivers 
+                                    key={index}
                                     Sender={sender.name} 
                                     Id={sender.id} 
                                     Data={sender.data} 

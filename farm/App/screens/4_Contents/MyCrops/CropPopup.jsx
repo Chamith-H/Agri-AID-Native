@@ -120,7 +120,7 @@ const CropPopup =( props )=> {
                                 <Image style={styles.navImg} source={require('../../../Assets/Icons/one.png')}/>
                             </View>
 
-                            <View style={{marginHorizontal:20}}>
+                            <View style={{marginHorizontal:20, position:'relative', zIndex:999}}>
                                 <SelectionDropdown Label='Select Crop' List={crops} Selected={setSelected}></SelectionDropdown>
                             </View>
 

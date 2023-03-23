@@ -9,13 +9,13 @@ const SelectionDropdown =( props )=> {
         <View style={styles.formField}>
             <Text style={styles.label}>{props.Label}</Text>
 
-            <View>
+            <View style={{position:'relative', zIndex:3}}>
             <SelectList 
                 data={props.List} 
                 setSelected={props.Selected}
-                boxStyles={{backgroundColor:'white', alignItems:'center', paddingVertical:7, borderRadius:8, width:200,position:'relative' ,zIndex:-2}}
+                boxStyles={{backgroundColor:'white', alignItems:'center', paddingVertical:7, borderRadius:8, width:200, overflow:'scroll'}}
                 inputStyles={{fontSize:15, color:'grey'}}
-                dropdownStyles={{backgroundColor:'white', position: 'absolute', top:30, width:'100%', zIndex:999}}
+                dropdownStyles={{backgroundColor:'white', position:'absolute',zIndex:999, width:'100%', top:30}}
                 dropdownTextStyles={{color:'#4A4747', fontSize:14}}
                 placeholder={props.Placeholder}
                 maxHeight={200}>

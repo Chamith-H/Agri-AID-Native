@@ -151,8 +151,8 @@ const ProfMgmt =()=> {
                 {left && (
                     <View style={{marginHorizontal:5}}>
                         <View style={styles.titleRow}>
-                            {titles.map((title) => (
-                                <View style={{backgroundColor:'#005F41', width:title.width, marginHorizontal:3,display:'flex', flexDirection:'row', justifyContent:'center'}}><Text style={styles.text}>{title.head}</Text></View>
+                            {titles.map((title, index) => (
+                                <View key={index} style={{backgroundColor:'#005F41', width:title.width, marginHorizontal:3,display:'flex', flexDirection:'row', justifyContent:'center'}}><Text style={styles.text}>{title.head}</Text></View>
                             ))}
                         </View>
 

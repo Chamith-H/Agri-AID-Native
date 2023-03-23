@@ -183,8 +183,8 @@ const GrowthInfo =()=> {
                                                                     <Text style={{color:'black', fontWeight:800}}>Symptoms</Text>
                                                                 </View>
 
-                                                                {pes.symptoms.map((symptom) => (
-                                                                    <View style={{flexDirection:'row'}}>
+                                                                {pes.symptoms.map((symptom, index) => (
+                                                                    <View key={index} style={{flexDirection:'row'}}>
                                                                         <Image style={{height:5, width:5, marginTop:6, marginRight: 6}} source={require('../../../../Assets/Icons/Bullet.png')}/>
 
                                                                         <View style={{marginRight:133}}>
@@ -197,8 +197,8 @@ const GrowthInfo =()=> {
                                                                     <Text style={{color:'black', fontWeight:800}}>Remedies</Text>
                                                                 </View>
 
-                                                                {pes.remedies.map((remedy) => (
-                                                                    <View style={{flexDirection:'row'}}>
+                                                                {pes.remedies.map((remedy, index) => (
+                                                                    <View key={index} style={{flexDirection:'row'}}>
                                                                         <Image style={{height:5, width:5, marginTop:6, marginRight: 6}} source={require('../../../../Assets/Icons/Bullet.png')}/>
 
                                                                         <View style={{marginRight:133}}>
@@ -224,8 +224,8 @@ const GrowthInfo =()=> {
                                             <View style={{marginVertical:8, marginHorizontal:12}}>
                                                 <Text style={{color:'black',fontSize:16, fontWeight:800}}>Quality Grading</Text>
 
-                                                {cropData.harvest.grading.map((grade) => (
-                                                    <View>
+                                                {cropData.harvest.grading.map((grade, index) => (
+                                                    <View key={index}>
                                                         <Text style={{color:'black', textAlign:'justify', fontSize:15, marginTop:10}}>Grade {grade.grade}</Text>
                                                         <Text style={{color:'grey', textAlign:'justify', fontSize:15, marginTop:1}}>{grade.status}</Text>
                                                     </View>

@@ -14,6 +14,7 @@ import {
 const UserMgmt =( props )=> {
 
     const { height } = useWindowDimensions();
+    const [reload, setReload] = useState(0)
 
     const [users, setUsers] = useState([])
     const [showPopup, setShowPopup] = useState(false)
@@ -58,7 +59,8 @@ const UserMgmt =( props )=> {
         try {
             const data = {id : manage.id}
             const response = await request.DeleteUser(data)
-            console.log(response.data)
+            setReload(1)
+            setShowPopup(false)
         }
 
         catch(err) {
@@ -86,6 +88,27 @@ const UserMgmt =( props )=> {
 
     }, []);
 
+    useEffect(()=> {
+        const get_Requests =async()=> {
+            const user = {type : props.Type, status:'show'}
+
+            const request = new Request
+
+            try {
+                const response = await request.FetchUsers(user)
+                setUsers(response.data)
+            }
+
+            catch(err) {
+                console.log(err)
+            } 
+        }
+
+        get_Requests();
+        setReload(0)
+
+    }, [reload]);
+
     const titles = [
         {head: 'ID', width:'15%'}, 
         {head: 'Name', width:'40%'}, 
@@ -106,9 +129,14 @@ const UserMgmt =( props )=> {
                 </View>
             )}
 
+                {props.Type === 'Farmer' && (
+                    <View style={{marginTop:20}}></View>
+                )}
+
+
             <View style={styles.titleRow}>
-                {titles.map((title) => (
-                    <View style={{backgroundColor:'#005F41', width:title.width, marginHorizontal:3,display:'flex', flexDirection:'row', justifyContent:'center'}}><Text style={styles.text}>{title.head}</Text></View>
+                {titles.map((title, index) => (
+                    <View key={index} style={{backgroundColor:'#005F41', width:title.width, marginHorizontal:3,display:'flex', flexDirection:'row', justifyContent:'center'}}><Text style={styles.text}>{title.head}</Text></View>
                 ))}
             </View>
 

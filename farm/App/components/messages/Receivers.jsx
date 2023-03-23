@@ -81,8 +81,13 @@ const Receivers =( props )=> {
                     </View>
 
                     <View style={styles.name}>
-                        <View style={styles.notification}><Text>1</Text></View>
-                        <Image style={styles.image} source={require('../../Assets/Icons/Expand.png')}/>
+                        {!openChat && (
+                            <Image style={styles.image} source={require('../../Assets/Icons/Expand.png')}/>
+                        )}
+
+                        {openChat && (
+                            <Image style={styles.image} source={require('../../Assets/Icons/CollapseH.png')}/>
+                        )}
                     </View>
                 </View>
             </TouchableOpacity>
@@ -90,8 +95,8 @@ const Receivers =( props )=> {
             {openChat && (
                 <View style={styles.chatBox}>
                     <ScrollView ref={scrollViewRef} style={styles.scroller}>
-                        {messages.map((msg) => (
-                            <View>
+                        {messages.map((msg, index) => (
+                            <View key={index}>
                                 {props.Role == 'Advisior' && (
                                     <View style={[msg.type == 'farmer' ? styles.f : styles.a]}>
                                         <View style={[styles.sender, msg.type == 'farmer' ? styles.farmer : styles.advisor]}>
@@ -111,7 +116,7 @@ const Receivers =( props )=> {
                         ))}
                     </ScrollView>
 
-                    <View>
+                    <View style={{display:'flex', flexDirection:'row', justifyContent:'center', marginVertical:20}}>
                         <TextInput
                             style={styles.input}
                             multiline={true}
@@ -125,7 +130,11 @@ const Receivers =( props )=> {
                             onChangeText={(enter)=> setText(enter)}>
                         </TextInput>
 
-                        <Button title='pressss' onPress={send_Message}></Button>
+                        <TouchableOpacity onPress={send_Message}>
+                            <View style={{borderStyle:'solid', borderWidth:2, height:35, width:35, borderRadius:100, paddingTop:2, paddingLeft:2, marginLeft:3, backgroundColor:'#D9D9D9'}}>
+                                <Image style={{height:25, width:25}} source={require('../../Assets/Icons/Send.png')}/>
+                            </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
             )}
@@ -151,12 +160,16 @@ const styles = StyleSheet.create({
     },
 
     input: {
+        width:'80%',
         borderStyle:'solid',
         borderWidth:2,
-        borderColor:'grey',
+        borderColor:'black',
+        borderRadius:20,
         color:'black',
         height:35,
-        
+        fontStyle:'italic',
+        fontSize:15,
+        backgroundColor:'#D9D9D9'
     },
 
     title: {

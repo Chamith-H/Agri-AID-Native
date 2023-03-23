@@ -6,17 +6,6 @@ import Request from '../../API_Callings/Request';
 
 const Home =( { navigation } )=> {
 
-    // For testing
-    const testing =async()=> {
-        const request = new Request
-        await request.Add_Crop('')
-    }
-
-    useEffect(() => {
-    //    testing()
-    }, []);
-    
-
     return (
         <View style={styles.body}>
             <HomeHeader Title='Agri Aid' logout_Action={()=> navigation.navigate('ChooseRole')}></HomeHeader>

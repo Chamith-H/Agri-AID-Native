@@ -48,16 +48,25 @@ const ForetastedMarket =( props )=> {
     return (
         <View>
             <View style={styles.form}>
+
+            <View style={{position:'relative', zIndex:999}}>
                 <SelectionDropdown Label='Select Crop' List={props.CropList} Selected={setCrop}></SelectionDropdown>
+            </View>
+
+            <View style={{position:'relative', zIndex:998}}>
                 <SelectionDropdown Label='Select Region' List={Regions} Selected={setRegion}></SelectionDropdown>
+            </View>
+
+            <View style={{position:'relative', zIndex:997}}>
                 <SelectionDropdown Label='Select Quarter' List={Quarters} Selected={setQuarter}></SelectionDropdown>
+                </View>
 
                 <View style={{marginHorizontal:'30%'}}>
                     <PositiveButton Title='Enter' press_Action={get_InputDATA}></PositiveButton>
                 </View>
             </View>
 
-            <View>
+            <View style={{position:'relative', zIndex:-2}}>
                 {showConditions && (
                     <MarketGrid 
                         Type='Foretasted' 

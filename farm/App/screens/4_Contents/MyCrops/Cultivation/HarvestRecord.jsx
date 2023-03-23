@@ -172,9 +172,7 @@ const HarvestRecord =()=> {
                 />
             )}
             </ScrollView>
-            
         </View>
-        
     )
 }
 

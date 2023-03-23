@@ -58,6 +58,7 @@ const MarketConditions =()=> {
 
             <DoubleTab 
                     LeftButton='Current Market Conditions' 
+                    Mark={leftTab}
                     press_LeftAction={()=> setLeftTab(true)}
                     RightButton='Foretasted Market Conditions'
                     press_RightAction={()=> setLeftTab(false)}>

@@ -229,6 +229,10 @@ const Management =( props )=> {
         }
     }
 
+    const mark_Weeding =( status )=> {
+
+    }
+
     useEffect(() => {
         weeding(props.Period, props.Grow, props.Actions)
     }, []);
@@ -291,7 +295,7 @@ const Management =( props )=> {
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
                                                 <View style={{marginRight:'50%'}}>
-                                                    <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}}></RadioButton.Item>
+                                                    <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={'checked'}></RadioButton.Item>
                                                     <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}}></RadioButton.Item>
                                                 </View>
                                             </View>

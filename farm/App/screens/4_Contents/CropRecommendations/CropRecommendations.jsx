@@ -57,19 +57,23 @@ const CropRecommendations =()=> {
             <BodyHeader Title='Crop Recommendations'></BodyHeader>
                 <ScrollView style={{backgroundColor:'white'}}>
                     <View style={styles.form}>
+                        <View style={{position:'relative', zIndex:999}}>
+                            <SelectionDropdown Label='Select Region' List={Regions} Selected={setSelectRegion}></SelectionDropdown>
+                        </View>
                 
-                <SelectionDropdown Label='Select Region' List={Regions} Selected={setSelectRegion}></SelectionDropdown>
-                <SelectionDropdown Label='Select Quarter' List={Quarters} Selected={setSelectQuarter}></SelectionDropdown>
+                        <View style={{position:'relative', zIndex:998}}>
+                            <SelectionDropdown Label='Select Quarter' List={Quarters} Selected={setSelectQuarter}></SelectionDropdown>
+                        </View>
+                
+                        <View style={{marginHorizontal:'30%'}}>
+                            <PositiveButton Title='Enter' press_Action={get_Recommendations}></PositiveButton>
+                        </View>
+                    </View>
 
-                <View style={{marginHorizontal:'30%'}}>
-                    <PositiveButton Title='Enter' press_Action={get_Recommendations}></PositiveButton>
+                    <View style={{width:'100%', marginBottom:50, position:'relative', zIndex:-5}}>
+                        <HoriontalScroller CropList={crops}></HoriontalScroller>
                 </View>
-            </View>
-
-            <View style={{width:'100%', marginBottom:50}}>
-                <HoriontalScroller CropList={crops}></HoriontalScroller>
-            </View>
-        </ScrollView>
+            </ScrollView>
         </View>
     )
 }

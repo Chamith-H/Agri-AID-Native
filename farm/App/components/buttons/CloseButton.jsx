@@ -12,7 +12,6 @@ const CloseButton =( props )=> {
     return (
         <TouchableOpacity onPress={ props.press_Action }>
             <View style={styles.button}>
-                {/* <Icon name="close" size={20} color="black" /> */}
                 <Text style={styles.icon}>X</Text>
             </View>
         </TouchableOpacity>

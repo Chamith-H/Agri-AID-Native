@@ -40,15 +40,21 @@ const CurrentMarket =( props )=> {
     return (
         <View>
             <View style={styles.form}>
-                <SelectionDropdown Label='Select Crop' List={props.CropList} Selected={setCrop}></SelectionDropdown>
-                <SelectionDropdown Label='Select Region' List={Regions} Selected={setRegion}></SelectionDropdown>
+
+                <View style={{position:'relative', zIndex:999}}>
+                    <SelectionDropdown Label='Select Crop' List={props.CropList} Selected={setCrop}></SelectionDropdown>
+                </View>
+
+                <View style={{position:'relative', zIndex:998}}>
+                    <SelectionDropdown Label='Select Region' List={Regions} Selected={setRegion}></SelectionDropdown>
+                </View>
 
                 <View style={{marginHorizontal:'30%'}}>
                     <PositiveButton Title='Enter' press_Action={get_InputDATA}></PositiveButton>
                 </View>
             </View>
 
-            <View>
+            <View style={{position:'relative', zIndex:-2}}>
                 {showConditions && (
                     <MarketGrid 
                     Type='Current' 
