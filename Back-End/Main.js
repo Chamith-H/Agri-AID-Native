@@ -20,7 +20,6 @@ mongoose.connect(clusterURL)
 //API paths
 app.use("/", require("./Routings/UserData_Route"));
 app.use("/", require("./Routings/CropData_Route"));
-app.use("/", require("./Routings/MarketCondition_Route"));
 app.use("/", require("./Routings/Cultivation_Route"));
 app.use("/", require("./Routings/HarvestRecord_Route"));
 

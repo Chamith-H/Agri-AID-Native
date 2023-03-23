@@ -26,14 +26,15 @@ const CurrentMarket =( props )=> {
         'Hambanthota'
     ]
 
-    const get_InputDATA =()=> {
+    const get_InputDATA =async()=> {
         const cropData = {
             name: crop,
             region: region,
             type: 'current'
         }
 
-        props.posting_Data(cropData)
+        await props.posting_Data(cropData)
+        console.log(cropData)
         setShowConditions(true)
     }
 

@@ -40,15 +40,16 @@ const MarketConditions =()=> {
 
     const get_Conditions = async( fetch )=> {
         const request = new Request
-
+        console.log(3)
         try {
-            const response = await request.Conditions(fetch)
+            const response = await request.Add_Market(fetch)
             let market = [response.data.price, response.data.demand, response.data.supply]
+            console.log(3)
             setMarketData(market)
         }
 
-        catch {
-
+        catch (err) {
+            console.log(err)
         }
     }
 

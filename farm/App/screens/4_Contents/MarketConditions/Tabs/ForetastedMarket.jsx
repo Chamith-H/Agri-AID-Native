@@ -33,7 +33,7 @@ const ForetastedMarket =( props )=> {
         'October - January'
     ]
 
-    const get_InputDATA =()=> {
+    const get_InputDATA =async()=> {
         const cropData = {
             name: crop,
             region: region,
@@ -41,7 +41,7 @@ const ForetastedMarket =( props )=> {
             type: 'foretasted'
         }
 
-        props.posting_Data(cropData)
+        await props.posting_Data(cropData)
         setShowConditions(true)
     }
 

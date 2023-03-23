@@ -21,12 +21,7 @@ class Request extends Component {
     }
 
     Recommendations(data) {
-        const _API = '/recommendation';
-        return Axios.post(this.serverURL + _API, data);
-    }
-
-    Conditions(data) {
-        const _API = '/marketConditions';
+        const _API = '/allCrops';
         return Axios.post(this.serverURL + _API, data);
     }
 
@@ -87,8 +82,15 @@ class Request extends Component {
 
     //------------------------------------------------------------------------------------------------
     //---------------------------------------------------------------------------------------------------------------
-    //
-    //
+    Add_Market(data) {
+        const _API = '/marketConditions';
+        return Axios.post(this.serverURL + _API, data);
+    }
+    
+    Crop_Recommend(data) {
+        const _API = '/cropRecommendations';
+        return Axios.post(this.serverURL + _API, data);
+    }
     //_________________________________________________________________________________________________________________
     //------------------------------------------------------------------------------------------------
     Add_Crop(data) {
@@ -96,10 +98,6 @@ class Request extends Component {
         return Axios.post(this.serverURL + _API, data);
     }
 
-    Add_Market(data) {
-        const _API = '/condition';
-        return Axios.post(this.serverURL + _API, data);
-    }
 }
 
 export default Request;

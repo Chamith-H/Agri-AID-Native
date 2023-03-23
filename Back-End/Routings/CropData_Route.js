@@ -3,7 +3,7 @@ const router = express.Router();
 const dataModel = require("../Models/CropData_Model")
 
 //API-01
-//save iten data to the Cart
+//save crop data to the database
 router.route("/add").post((req, res) => {
 
     const mongoDocument = new dataModel({
@@ -272,6 +272,8 @@ router.route("/add").post((req, res) => {
         res.send('1') :res.send('0')
 })
 
+
+//API 2 - Get crop names
 router.route("/cropList").get( async(req, res) => { 
     try {
         
@@ -288,8 +290,8 @@ router.route("/cropList").get( async(req, res) => {
     }
 })
 
-//API 2 Get crop Data
-router.route("/recommendation").post( async(req, res) => { 
+//API 3 - Get crop Data with all details
+router.route("/allCrops").post( async(req, res) => { 
     try {
         
         const crops = await dataModel.find({})
@@ -305,7 +307,7 @@ router.route("/recommendation").post( async(req, res) => {
     }
 })
 
-//API 2 Get selected crop
+//API 4 - Get selected crop data set by name
 router.route("/selectedCrop").post( async(req, res) => { 
     try {
         
@@ -313,6 +315,50 @@ router.route("/selectedCrop").post( async(req, res) => {
 
         if(crop != null) {
             res.send(crop)
+        }
+    }
+
+    catch (error) {
+        res.send('Error: ' +error)
+    }
+})
+
+//-------------------------------APIs for te data science parts---------------------------------------//
+
+//API 5 - predict crop recommendations
+router.route("/cropRecommendations").post( async(req, res) => { 
+    try {
+        const region = req.body.region
+        const quarter = req.body.quarter
+
+        // Type your code here | predict recomended crops for above data
+        // Send me the output, JSON format
+    }
+
+    catch (error) {
+        res.send('Error: ' +error)
+    }
+})
+
+//API 6 - predict market conditions
+router.route("/marketConditions").post( async(req, res) => { 
+    
+    try {
+        if (req.body.type == 'current') {
+            const crop = req.body.name
+            const region = req.body.region
+
+            //Type your code here | predict current market conditions
+            // Send me the output, JSON format
+        }
+
+        else if (req.body.type == 'foretasted') {
+            const crop = req.body.name
+            const region = req.body.region
+            const quarter = req.body.quarter
+
+            //Type your code here | predict foretasted market conditions
+            // Send me the output, JSON format
         }
     }
 

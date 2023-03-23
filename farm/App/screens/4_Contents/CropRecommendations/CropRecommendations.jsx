@@ -40,7 +40,7 @@ const CropRecommendations =()=> {
         const recomanded = {region: selectRegion, quarter: selectQuarter}
 
         try {
-            const response = await request.Recommendations(recomanded)
+            const response = await request.Crop_Recommend(recomanded)
             
             if (response.data != 0) {
                 setCrops(response.data)
