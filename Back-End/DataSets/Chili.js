@@ -1,60 +1,60 @@
-const Capsicum = {
-    id: 1,
-        name : 'Capsicum (Prarthana)',
+const Chili = {
+    id: 2,
+        name : 'Chili (MI-CH-HY 01)',
         image : 'https://drive.google.com/uc?id=15IXNiPHKjtAACLPkFHlfjfYVQOP6ee37',
-        period : 112,
-        yield : 296,
+        period : 126,
+        yield : 864,
         requirements: {
             Irrigation: 'Weekly',
             Fertilizer: 'Urea, MOP, TSP',
-            Pest_Threats: 'Aphids, White Flies and Mites',
-            Diseases: 'Damping Off, Leaf Curl Virus, Leaf Spot Virus',
-            Ideal_Cultivation_Locations: 'Nuwara Eliya, Badulla, Kurunegala, Puttalam and Anuradhapura',
+            Pest_Threats: 'Aphids, Thrips Flies and Mites',
+            Diseases: 'Pseudomonas Solanacearum, Mosaic Virus, Narrow Leaf Disorder',
+            Ideal_Cultivation_Locations: 'Anuradhapura, Hambanthota, Jaffna, Vavuniya and Puttalam',
             Ideal_Cultivation_Time: 'April to May / November to December',
-            Maturity_Period: '112 Days',
-            Average_Yield: '296g per Plant'
+            Maturity_Period: '126 Days',
+            Average_Yield: '864g per Plant'
         },
 
         actions: {
             weeding: {
                         start : 0,
                         gap : 7,
-                        end : 112,
+                        end : 126,
                         description:'Weeding for Capsicum involves removing unwanted plants (weeds) from the area around the Capsicum plants. Weeds can compete with Capsicum plants for nutrients, water, and sunlight, leading to reduced growth and yield. Therefore, weeding is an important practice to ensure the healthy growth and optimal yield of Capsicum plants.'
                      },
 
             soiling: {
                         start : 0,
                         gap : 7,
-                        end : 112,
+                        end : 126,
                         description:'Soil preparation for Capsicum plants refers to the process of preparing the soil to create an ideal growing environment for the crop. It involves a range of activities such as removing any debris/rocks from the soil surface, loosening the soil and adding organic matter such as compost and manure. Soil preparation for Capsicum plants is critical to establish a strong root system, access essential nutrients, and resist diseases and pests in an effort to optimize the plant growth, health, and yield.'
                      },
 
             pruning: {
-                        start : 42,
+                        start : 56,
                         gap : 7,
-                        end : 112,
+                        end : 126,
                         description:'Capsicum pruning is the process of selectively removing certain parts of the Capsicum plant in order to improve its growth, yield, and overall health. This can involve removing diseased or damaged leaves and fruit, as well as thinning out branches to promote better air circulation and light penetration. Pruning can also help to encourage bushier growth and prevent the plant from becoming too tall.'
                      },
 
             irrigation: {
                         start : 0,
-                        gap : 3,
-                        end : 112,
+                        gap : 4,
+                        end : 126,
                         description:'Irrigation for Capsicum plants refers to the process of watering plants to maintain optimal soil moisture levels as it is crucial for the healthy growth and development of the crops, as they require consistent and adequate moisture levels throughout their different growth stages.'
                      },
 
             fertilization: {
                         start : 0,
                         gap : 14,
-                        end : 112,
+                        end : 126,
                         description:"Fertilization for Capsicum plants involves providing the necessary nutrients to support healthy growth and development using TSP, Urea, and MOP, which provide different macronutrients. It's important to apply fertilizers at the right time and in the right amounts, as both over and under fertilization can lead to poor growth and low yields of Capsicum plants."
                      },
 
             harvesting: {
-                        start : 84,
+                        start : 98,
                         gap : 7,
-                        end : 112,
+                        end : 126,
                         description:'Harvesting Capsicum peppers refers to the process of removing the mature fruit from the plant for sale or consumption. The peppers are typically harvested when they reach the desired maturity and size by carefully plucking the matured produce and following proper packaging and storage practices to prevent spoilage.'
                      },
         },
@@ -62,39 +62,39 @@ const Capsicum = {
         stages : {
             one: {
                 start:0,
-                end:21,
-                duration:3,
+                end:28,
+                duration:4,
                 image:'https://drive.google.com/uc?id=1H3wTL7KmtArnuOTGzIC60dn2k_PhThR3',
                 description:'The crop starts from seeds that are sown in small pots. During this stage, the seeds germinate and grow into small seedlings. At this stage, the seedlings have small, green leaves and a thin stem.'
             },
 
             two: {
-                start:21,
-                end:42,
-                duration:3,
+                start:28,
+                end:56,
+                duration:4,
                 image:'https://drive.google.com/uc?id=1DIHN0jiyusQ2f2Sk0hAoLyVWfwTeShO2',
                 description:'During this stage, the plant grows rapidly and develops its leaves, stems, and roots. At this stage, the plant has several pairs of leaves, and the stem becomes thicker and stronger.'
             },
 
             three: {
-                start:42,
-                end:56,
+                start:56,
+                end:70,
                 duration:2,
                 image:'https://drive.google.com/uc?id=1uXO19ypFVSRXueVYlo8msROf3vLDvEmG',
                 description:'The plant starts to produce flowers at the end of the vegetative stage or the beginning of the flowering stage. During this stage, the flowers bloom, and pollination occurs. At this stage, the plant has small, white or yellow flowers.'
             },
 
             four: {
-                start:56,
-                end:84,
+                start:70,
+                end:98,
                 duration:4,
                 image:'https://drive.google.com/uc?id=1YujBvK3NXOCaX0mBT_mjLHhMYXhxKTC7',
                 description:'After the flowers are pollinated, they start to develop, grow and mature into fruits. At this stage, the plant initially has small, green fruits that will eventually mature into fruits ready for harvest.'
             },
 
             five: {
-                start:84,
-                end:112,
+                start:98,
+                end:126,
                 duration:4,
                 image:'https://drive.google.com/uc?id=1MkTcOk7DxJ3tbTfO1FrQzd0dBTEwO72m',
                 description:'This is the final stage of the capsicum crop, where the mature fruits are harvested from the plant. During this stage, the fruits are shiny and firm and are greenish yellow in colour.'
@@ -111,7 +111,7 @@ const Capsicum = {
 
             {
                 stage:'Vegetative',
-                weeding: 'During the vegetative stage, Capsicum plants grow rapidly, and it is important to keep the weeds under control. Weeds can still compete with the plants for nutrients and moisture. Weeding should be done manually or using a shallow hoe to avoid damaging the plant.',
+                weeding: 'During the vegetative stage, Chilli plants grow rapidly, and it is important to keep the weeds under control. Weeds can still compete with the plants for nutrients and moisture. Weeding should be done manually or using a shallow hoe to avoid damaging the plant.',
                 soil: 'During the vegetative stage, the soil should be kept moist but not waterlogged. Adding a layer of mulch on the soil surface can help retain moisture and suppress weed growth. ',
                 pruning: ''
             },
@@ -133,7 +133,7 @@ const Capsicum = {
             {
                 stage:'Harvesting',
                 weeding: 'During the harvesting stage, it is important to continue weeding to maintain a clean growing environment for the remaining plants. Weeds can still compete with the plants for nutrients and moisture, which can affect the quality of the produce. Weeding should be done manually or using a shallow hoe to avoid damaging the plant.',
-                soil: 'During the harvesting stage, the soil should be kept moist but not waterlogged. Adding a layer of mulch on the soil surface can help retain moisture and suppress weed growth. ',
+                soil: 'During the harvesting stage, the soil should be kept moist but not waterlogged. Adding a layer of mulch on the soil surface can help retain moisture and suppress weed growth.',
                 pruning: "During the harvesting stage, it is important to remove any damaged or diseased leaves, any fruit that is misshapen or any overripe fruit starting to decay to help direct the plant's energy towards the remaining healthy fruit and to also eliminate the attraction of pests and diseases."
             },
             
@@ -258,4 +258,4 @@ const Capsicum = {
         }
 }
 
-module.exports = Capsicum;
+module.exports = Chili;
