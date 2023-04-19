@@ -64,48 +64,4 @@ router.route("/selectedCrop").post( async(req, res) => {
     }
 })
 
-//-------------------------------APIs for te data science parts---------------------------------------//
-
-//API 5 - predict crop recommendations
-router.route("/cropRecommendations").post( async(req, res) => { 
-    try {
-        const region = req.body.region
-        const quarter = req.body.quarter
-
-        // Type your code here | predict recomended crops for above data
-        // Send me the output, JSON format
-    }
-
-    catch (error) {
-        res.send('Error: ' +error)
-    }
-})
-
-//API 6 - predict market conditions
-router.route("/marketConditions").post( async(req, res) => { 
-    
-    try {
-        if (req.body.type == 'current') { // Current market conditions
-            const crop = req.body.name
-            const region = req.body.region
-
-            //Type your code here | predict current market conditions
-            // Send me the output, JSON format
-        }
-
-        else if (req.body.type == 'foretasted') { // Foretasted market conditions
-            const crop = req.body.name
-            const region = req.body.region
-            const quarter = req.body.quarter
-
-            //Type your code here | predict foretasted market conditions
-            // Send me the output, JSON format
-        }
-    }
-
-    catch (error) {
-        res.send('Error: ' +error)
-    }
-})
-
 module.exports = router

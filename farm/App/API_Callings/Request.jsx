@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import Axios from "axios";
 
 class Request extends Component {
+    mainServer = 'http://192.168.8.182'
 
-    serverURL = 'http://192.168.8.182:8000'
+    serverURL = this.mainServer + ':8000'
+    aiURL = this.mainServer + ':5000'
 
-    Register(data) { 
+    Register(data) {   
         const _API = '/register';
         return Axios.post(this.serverURL + _API, data);
     };
@@ -84,12 +86,12 @@ class Request extends Component {
     //---------------------------------------------------------------------------------------------------------------
     Add_Market(data) {
         const _API = '/marketConditions';
-        return Axios.post(this.serverURL + _API, data);
+        return Axios.post(this.aiURL + _API, data);
     }
     
     Crop_Recommend(data) {
         const _API = '/cropRecommendations';
-        return Axios.post(this.serverURL + _API, data);
+        return Axios.post(this.aiURL + _API, data);
     }
     //_________________________________________________________________________________________________________________
     //------------------------------------------------------------------------------------------------
