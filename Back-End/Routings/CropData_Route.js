@@ -85,7 +85,7 @@ router.route("/cropRecommendations").post( async(req, res) => {
 router.route("/marketConditions").post( async(req, res) => { 
     
     try {
-        if (req.body.type == 'current') {
+        if (req.body.type == 'current') { // Current market conditions
             const crop = req.body.name
             const region = req.body.region
 
@@ -93,7 +93,7 @@ router.route("/marketConditions").post( async(req, res) => {
             // Send me the output, JSON format
         }
 
-        else if (req.body.type == 'foretasted') {
+        else if (req.body.type == 'foretasted') { // Foretasted market conditions
             const crop = req.body.name
             const region = req.body.region
             const quarter = req.body.quarter
