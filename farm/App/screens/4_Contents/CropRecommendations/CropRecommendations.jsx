@@ -19,19 +19,37 @@ const CropRecommendations =()=> {
     const[selectQuarter, setSelectQuarter] = useState('')
 
     const Regions = [
-        'Gampaha',
-        'Colombo',
-        'Kaluthara',
-        'Galle',
-        'Mathara',
-        'Hambanthota'
+       "Colombo",
+       "Gampaha",
+       "Kalutara",
+       "Kandy",
+       "Matale",
+       "Nuwara Eliya",
+       "Galle",
+       "Matara",
+       "Hambantota",
+       "Jaffna",
+       "Kilinochchi",
+       "Mannar",
+       "Vavuniya",
+       "Mullaitivu",
+       "Batticaloa",
+       "Ampara",
+       "Trincomalee",
+       "Kurunegala",
+       "Puttalam",
+       "Anuradhapura",
+       "Polonnaruwa",
+       "Badulla",
+       "Moneragala",
+       "Ratnapura",
+       "Kegalle",
     ]
 
     const Quarters = [
         'January - April',
-        'April - July',
-        'July - October',
-        'October - January'
+        'May - August',
+        'September - December',
     ]
 
     const get_Recommendations = async()=> {
@@ -40,7 +58,7 @@ const CropRecommendations =()=> {
         const recomanded = {region: selectRegion, quarter: selectQuarter}
 
         try {
-            const response = await request.Crop_Recommend(recomanded)
+            const response = await request.Recommendations(recomanded)
             
             if (response.data != 0) {
                 setCrops(response.data)

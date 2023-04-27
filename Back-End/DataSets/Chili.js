@@ -1,7 +1,7 @@
 const Chili = {
     id: 2,
         name : 'Chili (MI-CH-HY 01)',
-        image : 'https://drive.google.com/uc?id=15IXNiPHKjtAACLPkFHlfjfYVQOP6ee37',
+        image : 'https://drive.google.com/uc?id=1R2YQMTvHXkX_RkQ8YL9apJAuHrLyWk3b',
         period : 126,
         yield : 864,
         requirements: {
@@ -64,7 +64,7 @@ const Chili = {
                 start:0,
                 end:28,
                 duration:4,
-                image:'https://drive.google.com/uc?id=1H3wTL7KmtArnuOTGzIC60dn2k_PhThR3',
+                image:'https://drive.google.com/uc?id=11y5eBP6p1ge9GMgxGJ0In-l-9Rbf0d2v',
                 description:'The crop starts from seeds that are sown in small pots. During this stage, the seeds germinate and grow into small seedlings. At this stage, the seedlings have small, green leaves and a thin stem.'
             },
 
@@ -72,7 +72,7 @@ const Chili = {
                 start:28,
                 end:56,
                 duration:4,
-                image:'https://drive.google.com/uc?id=1DIHN0jiyusQ2f2Sk0hAoLyVWfwTeShO2',
+                image:'https://drive.google.com/uc?id=192UPtepcrnUFgT4wcIyuTsU6rBM5wJrf',
                 description:'During this stage, the plant grows rapidly and develops its leaves, stems, and roots. At this stage, the plant has several pairs of leaves, and the stem becomes thicker and stronger.'
             },
 
@@ -80,7 +80,7 @@ const Chili = {
                 start:56,
                 end:70,
                 duration:2,
-                image:'https://drive.google.com/uc?id=1uXO19ypFVSRXueVYlo8msROf3vLDvEmG',
+                image:'https://drive.google.com/uc?id=1VUf1Bk8cU9Gx-JP684IxkToLoNDYXlIp',
                 description:'The plant starts to produce flowers at the end of the vegetative stage or the beginning of the flowering stage. During this stage, the flowers bloom, and pollination occurs. At this stage, the plant has small, white or yellow flowers.'
             },
 
@@ -88,7 +88,7 @@ const Chili = {
                 start:70,
                 end:98,
                 duration:4,
-                image:'https://drive.google.com/uc?id=1YujBvK3NXOCaX0mBT_mjLHhMYXhxKTC7',
+                image:'https://drive.google.com/uc?id=1_Dl1EwUE4UbavRpp-8MLI8I4ou9B5KJU',
                 description:'After the flowers are pollinated, they start to develop, grow and mature into fruits. At this stage, the plant initially has small, green fruits that will eventually mature into fruits ready for harvest.'
             },
 
@@ -96,7 +96,7 @@ const Chili = {
                 start:98,
                 end:126,
                 duration:4,
-                image:'https://drive.google.com/uc?id=1MkTcOk7DxJ3tbTfO1FrQzd0dBTEwO72m',
+                image:'https://drive.google.com/uc?id=1Ixu_oRdZh-Jz5onH8hd_zrd43Ufz_IEG',
                 description:'This is the final stage of the capsicum crop, where the mature fruits are harvested from the plant. During this stage, the fruits are shiny and firm and are greenish yellow in colour.'
             },
         },
@@ -191,15 +191,15 @@ const Chili = {
                     },
 
                     {
-                        name: 'White Flies',
-                        image:'https://drive.google.com/uc?id=1R9LO7sWV-SflAqFkgdzLv2Z1PYdHqhuX',
-                        symptoms: ['Yellowing and wilting of leaves.', 'Sticky residue on leaves and stems.', 'Presence of small, white, moth-like insects on the plant.', 'Black sooty growing mould.'],
-                        remedies: ['Prune affected leaves and dispose of them.', 'Use sticky traps such as yellow sticky cards.']
+                        name: 'Thrips',
+                        image:'https://drive.google.com/uc?id=1y7wUcv4B_7ja_oTIl4fDekGYd5ar5vMr',
+                        symptoms: ['Silver or bronze streaks on leaves.', 'Deformed or distorted leaves and flowers.', 'Black feces on leaves.', 'Presence of small, slender insects on the plant.'],
+                        remedies: ['Speckling or yellowing of leaves.', 'Use sticky traps such as yellow sticky cards.']
                     },
 
                     {
                         name: 'Mites',
-                        image:'https://drive.google.com/uc?id=1YjoSfTurNb-stSNDY2d1J6bHqdZp-MXy',
+                        image:'https://drive.google.com/uc?id=1kfk3h4rRKQBJKtetVW-nxaiJWu-k9lgP',
                         symptoms: ['Speckling or yellowing of leaves.', 'Small webs on the plant.', 'Stunted plant growth.', 'Wilting and leaf drop.'],
                         remedies: ['Prune affected leaves and dispose of them.', 'Use sticky traps such as yellow sticky cards.']
                     },
@@ -207,36 +207,36 @@ const Chili = {
 
            threats : [
                         {
-                            name: 'Damping Off',
-                            image:'https://drive.google.com/uc?id=1bGI4gae9K7jyhEpH6jz6Bh3gN7NYYEa6',
-                            symptoms: ['The seedling dies before/after emerging from the soil level.', 'Seeds and seedlings get rotten.', 'Infection appears first at the plant’s base or root.', 'Moisture and soft rot are visible in tissues from infected areas.', 'The infected area shrinks and the plant collapses when the damage is severe.', 'Before the plant dies, the leaves become withered.'],
-                            remedies: ['Soil solarization.', 'The diseased plants should be removed and destroyed.']
+                            name: 'Pseudomonas Solanacearum',
+                            image:'https://drive.google.com/uc?id=17hVAvJaloMKHzcovQtZPtsAWi2pnFBBB',
+                            symptoms: ['Rotting roots and stems.', 'Discolouration of the plant turn cross-section.', 'Wilting and yellowing of lower leaves.', 'Stunted growth.', 'Reduced fruit production.'],
+                            remedies: ['The diseased plants should be removed and destroyed.', 'Regularize irrigation patterns.']
                         },
 
                         {
-                            name: 'Leaf Curl Virus',
-                            image:'https://drive.google.com/uc?id=1arVFuBNL8Y-FVZ5RSZ3xu1bWO-0dKJHh',
-                            symptoms: ['Yellowing of leaves and veins become clearly visible.', 'Dwarfing of plants and formation of excessive number of shoots.', 'Upward curling of leaves due to reduced leaf size.', 'The pods of infected plants are small.'],
-                            remedies: ['Timely cultivation.', 'Improve weed control.']
+                            name: 'Mosaic Virus',
+                            image:'https://drive.google.com/uc?id=1Sx6Wqg4oAWnnpJOUjXRdHWKy94j0_Ao1',
+                            symptoms: ['Mottled, yellowish-green leaves.', 'Stunted growth.', 'Reduced growth.', 'Reduced yield.'],
+                            remedies: ['Remove infected plants.', 'Improve weed control.']
                         },
 
                         {
-                            name: 'Leaf Spot Virus',
-                            image:'https://drive.google.com/uc?id=1jC3jyqG-SDTnB7htgJP4jTgOUINAKxtZ',
-                            symptoms: ['During the initial stage brownish circular spots appear on leaves.', 'At latter stages, leaves turn yellow and drop.', 'Infected leaves will fall after become wilted and rolled.', 'The lower mature leaves are usually the first to become infected.', 'When the damage is severe, upper leaves are also become infected.'],
-                            remedies: ['Collect all the infected leaves and destroy them.', 'To avoid high RH ambient conditions.', 'Apply the recommended amount of fertilizers.']
+                            name: 'Narrow Leaf  Disorder',
+                            image:'https://drive.google.com/uc?id=10Jjk-nDAHGLSXGL6ewDSu4AvqvUXPINj',
+                            symptoms: ['Narrow, elongated leaves.', 'Leaf curling.', 'Infected leaves will fall after become wilted and rolled.', 'The lower mature leaves are usually the first to become infected.', 'When the damage is severe, upper leaves are also become infected.'],
+                            remedies: ['Increasing the irrigation frequency. ', 'Improving soil preparation and care.']
                         },
                      ]
         },
 
         harvest : {
-            time : 'First harvesting can be done approximately 84 days after planting. Practice harvesting in dry weather conditions.',
-            storage : "To store capsicums after harvest, it's important to keep them in a cool, dry place away from direct sunlight, ideally between 10-12°C. As capsicums are sensitive to moisture, it's crucial to ensure they stay dry during storage. It's also best to store capsicums separately from other produce as they release ethylene gas, which can cause other fruits and vegetables to ripen and spoil faster. If using containers, choose breathable options such as mesh bags or perforated plastic bags to allow for air circulation and prevent moisture build-up.",
-            packing : "To package capsicum begin by cleaning the harvest and removing any dirt or debris. Next, use food-grade plastic bags or breathable containers made for storing vegetables, ensuring they're clean, dry, and free of any contaminants. Carefully place the capsicums in the packaging, taking care not to bruise or damage them. If using plastic bags, make sure to remove as much air as possible before sealing. Label the packaging with relevant information such as the date of harvest, capsicum variety, and grade.",
+            time : 'The first harvest can be done approximately 98 days after planting. Practice harvesting in dry weather conditions.',
+            storage : "To store chilli pepper after harvest, it's important to keep them in a cool, dry place away from direct sunlight, ideally between 10-12°C. As chilli peppers are sensitive to moisture, it's crucial to ensure they stay dry during storage. If using containers, choose breathable options such as mesh bags or perforated plastic bags to allow for air circulation and prevent moisture build-up.",
+            packing : "To package chilli peppers begin by cleaning the harvest and removing any dirt or debris. Dry the chili peppers thoroughly, either by air drying them or using a clean towel to remove any excess moisture. Next, use food-grade plastic bags or breathable containers made for storing vegetables, ensuring they're clean, dry, and free of any contaminants. Carefully place the chilli peppers in the packaging, taking care not to bruise or damage them. If using plastic bags, make sure to remove as much air as possible before sealing. Label the packaging with relevant information such as the date of harvest, chilli pepper variety, and grade. ",
             grading : [
                             {
                                 grade: 'A',
-                                status: 'The products under this grade are typically uniform in size (Pod length 13-15 cm Pod weight 35-40g), shape, colour, and texture and are free from any defects or blemishes.'
+                                status: 'The products under this grade are typically uniform in size (Pod length 13-15 cm Pod weight 15-20g), shape, colour, and texture and are free from any defects or blemishes. '
                             },
 
                             {

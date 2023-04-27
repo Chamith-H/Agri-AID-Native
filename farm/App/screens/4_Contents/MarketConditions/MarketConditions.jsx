@@ -54,7 +54,7 @@ const MarketConditions =()=> {
     }
 
     return (
-        <View style={{flex:1}}>
+        <View style={{flex:1, height:'100%'}}>
             <BodyHeader Title='Market Conditions'></BodyHeader>
 
             <DoubleTab 
