@@ -71,7 +71,7 @@ const CropRecommendations =()=> {
     }
 
     return (
-        <View>
+        <View style={{flex:1}}>
             <BodyHeader Title='Crop Recommendations'></BodyHeader>
                 <ScrollView style={{backgroundColor:'white'}}>
                     <View style={styles.form}>

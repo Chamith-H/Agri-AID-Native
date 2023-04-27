@@ -18,19 +18,37 @@ const ForetastedMarket =( props )=> {
     const[showConditions, setShowConditions] = useState(false)
 
     const Regions = [
-        'Gampaha',
-        'Colombo',
-        'Kaluthara',
-        'Galle',
-        'Mathara',
-        'Hambanthota'
-    ]
+        "Colombo",
+        "Gampaha",
+        "Kalutara",
+        "Kandy",
+        "Matale",
+        "Nuwara Eliya",
+        "Galle",
+        "Matara",
+        "Hambantota",
+        "Jaffna",
+        "Kilinochchi",
+        "Mannar",
+        "Vavuniya",
+        "Mullaitivu",
+        "Batticaloa",
+        "Ampara",
+        "Trincomalee",
+        "Kurunegala",
+        "Puttalam",
+        "Anuradhapura",
+        "Polonnaruwa",
+        "Badulla",
+        "Moneragala",
+        "Ratnapura",
+        "Kegalle",
+     ]
 
-    const Quarters = [
+     const Quarters = [
         'January - April',
-        'April - July',
-        'July - October',
-        'October - January'
+        'May - August',
+        'September - December',
     ]
 
     const get_InputDATA =async()=> {

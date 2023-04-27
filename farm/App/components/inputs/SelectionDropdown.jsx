@@ -13,16 +13,15 @@ const SelectionDropdown =( props )=> {
             <SelectList 
                 data={props.List} 
                 setSelected={props.Selected}
-                boxStyles={{backgroundColor:'white', alignItems:'center', paddingVertical:7, borderRadius:8, width:200, overflow:'scroll'}}
+                boxStyles={{backgroundColor:'white', alignItems:'center', paddingVertical:7, borderRadius:8, width:200}}
                 inputStyles={{fontSize:15, color:'grey'}}
-                dropdownStyles={{backgroundColor:'white', position:'absolute',zIndex:999, width:'100%', top:30}}
+                dropdownStyles={{backgroundColor:'white', position:'absolute',zIndex:999, width:'100%', top:30,height:'auto', overflow:'scroll'}}
                 dropdownTextStyles={{color:'#4A4747', fontSize:14}}
                 placeholder={props.Placeholder}
-                maxHeight={200}>
+                >
             </SelectList>
             </View>
         </View>
-        
     ) 
 }
 
