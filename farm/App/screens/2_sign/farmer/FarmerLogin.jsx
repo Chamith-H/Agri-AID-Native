@@ -22,7 +22,7 @@ import AppUser from '../../../StaticData/AppUser';
 const FarmerLogin =( { navigation } )=> {
 
     const route = useRoute()
-    const [header, setHeader] = useState('')
+    const [header, setHeader] = useState('Farmer Log In')
 
     const [userEmail, setUserEmail] = useState('')
     const [userPassword, setUserPassword] = useState('')

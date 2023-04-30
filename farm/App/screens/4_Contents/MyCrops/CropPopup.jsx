@@ -71,6 +71,9 @@ const CropPopup =( props )=> {
                           }
 
         const response = await request.Cultivate(cultivate)
+
+        await props.Refresher(1)
+        props.Refresher(0)
     }
 
     const get_Back =()=> {

@@ -74,7 +74,7 @@ const YieldPredict =()=> {
         else {
             setWarning(false)
 
-            const variation = predicted - recorded
+            const variation =  recorded - predicted
             setGap(variation)
 
             if (variation > 0) {
@@ -143,7 +143,7 @@ const YieldPredict =()=> {
                             <View style={{marginTop:16, display:'flex', flexDirection:'row', alignItems:'center'}}>
                                 <Text style={{fontSize:16, color:'black'}}>Predicted yield :</Text>
                                 <View style={{borderStyle:'solid', borderWidth:2, borderColor:'black', borderRadius:8, display:'flex', flexDirection:'row', justifyContent:'space-between', paddingHorizontal:10, paddingVertical:6, marginLeft:15, width:'62%'}}>
-                                    <Text style={{color:'grey', fontSize:16}}>{predicted}</Text>
+                                    <Text style={{color:'grey', fontSize:16}}>{predicted.toFixed(2)}</Text>
                                     <Text style={{color:'black', fontSize:16}}>Kg</Text>
                                 </View>
                             </View>
@@ -200,7 +200,7 @@ const YieldPredict =()=> {
                             <View style={{marginTop:16, display:'flex', flexDirection:'row', alignItems:'center'}}>
                                 <Text style={{fontSize:16, color:'black'}}>Yield variation :</Text>
                                 <View style={{borderStyle:'solid', borderWidth:2, borderColor:'black', borderRadius:8, display:'flex', flexDirection:'row', justifyContent:'space-between', paddingHorizontal:10, paddingVertical:6, marginLeft:15, width:'62%'}}>
-                                    <Text style={{color:'grey', fontSize:16}}>({gap})</Text>
+                                    <Text style={{color:'grey', fontSize:16}}>{gap.toFixed(2)}</Text>
                                     <Text style={{color:'black', fontSize:16}}>Kg</Text>
                                 </View>
 

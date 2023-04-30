@@ -20,6 +20,7 @@ import SelectedCrop from '../../../StaticData/SelectedCrop';
 const MyCrops =({ navigation })=> {
 
     const { height } = useWindowDimensions();
+    const [refresh, setRefresh] = useState(0)
 
     const [user, setUser] = useState('')
 
@@ -34,6 +35,10 @@ const MyCrops =({ navigation })=> {
         setRemove(true)
     }
 
+    const handdle_Refresh =( state )=> {
+        setRefresh(state)
+    }
+
     const remove_Cultivation =async()=> {
         const wanted =  {
                             farmer:user,
@@ -44,7 +49,9 @@ const MyCrops =({ navigation })=> {
 
         try{
             const response = await request.DeleteCultivation(wanted)
-            console.log(response.data)
+            await setRefresh(1)
+            setRefresh(0)
+            setRemove(false)
         }
 
         catch(err) {
@@ -82,11 +89,14 @@ const MyCrops =({ navigation })=> {
         }
 
         get_Farmer()
-    }, []);
+
+        setPopup(false)
+        setRemove(false)
+    }, [refresh]);
     
     return (
         <View style={{position:'relative'}}>
-            {popup && (<CropPopup press_Action={()=>setPopup(false)} Farmer={user}></CropPopup>)}
+            {popup && (<CropPopup press_Action={()=>setPopup(false)} Farmer={user} Refresher={handdle_Refresh}></CropPopup>)}
 
             {remove && (
                 <View style={[styles.popup, {height}]}>
@@ -114,7 +124,7 @@ const MyCrops =({ navigation })=> {
 
                     {crops.map((crop, index) => (
                         <View style={styles.list} key={index}>
-                            <TouchableOpacity onPress={()=> plan_Cultivation(crop.crop)}><Text style={{color:'black', fontWeight:800}}>{crop.crop}</Text></TouchableOpacity>
+                            <TouchableOpacity onPress={()=> plan_Cultivation(crop.crop)}><Text style={{color:'black', fontWeight:800, width:80}}>{crop.crop}</Text></TouchableOpacity>
                             <Text style={styles.item}>{crop.begin.slice(0,10)}</Text>
                             <Text style={styles.item}>{crop.end.slice(0,10)}</Text>
                             <TouchableOpacity onPress={() => get_Remove(crop.crop)}><Image style={styles.options} source={require('../../../Assets/Icons/Delete.png')}/></TouchableOpacity>

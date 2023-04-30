@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     text : {
       marginVertical:9,
       color: 'white',
-      fontSize: 27,
+      fontSize: 23,
       fontWeight: 600,
     },
 

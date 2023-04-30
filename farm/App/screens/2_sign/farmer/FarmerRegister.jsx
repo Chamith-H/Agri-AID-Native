@@ -16,7 +16,7 @@ import LoginHeader from '../../../components/headers/LoginHeader';
 import CredentialField from '../../../components/inputs/CredentialField';
 import PasswordField from '../../../components/inputs/PasswordField';
 
-const FarmerRegister =()=> {
+const FarmerRegister =( { navigation } )=> {
     const route = useRoute()
 
     const [role, setRole] = useState('')
@@ -49,7 +49,10 @@ const FarmerRegister =()=> {
 
         try {
             const response = await request.Register(newUser)
-            console.log(response.data)
+            
+            if(response.data == 1) {
+                navigation.navigate('FarmerLogin')
+            }
         }
 
         catch (err) {
@@ -90,7 +93,7 @@ const FarmerRegister =()=> {
                 <ScrollView>
                     <View style={styles.fields}>
                         <View style={styles.singleField} >
-                            <CredentialField Label={title} Placeholder='Your id' Change={ (value) => setUserId(value) } />
+                            <CredentialField Label={title} Placeholder='Your id' Value={userId} Change={ (value) => setUserId(value) } />
                         </View>
 
                         <View style={styles.singleField} >
