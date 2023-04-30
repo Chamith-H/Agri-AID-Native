@@ -21,7 +21,12 @@ const Management =( props )=> {
     const [activityTabs, setActivityTabs] = useState(false)
     const [todayActivities, setTodayActivities] = useState([])
 
-    const [marked, setMarked] = useState(0)
+    const [marked1, setMarked1] = useState(0)
+    const [marked2, setMarked2] = useState(0)
+    const [marked3, setMarked3] = useState(0)
+    const [marked4, setMarked4] = useState(0)
+    const [marked5, setMarked5] = useState(0)
+    const [marked6, setMarked6] = useState(0)
 
     const weed = {key: 'weed', color: '#005F41', selectedDotColor: 'blue'};
     const soil = {key: 'soil', color: '#005F41', selectedDotColor: 'blue'};
@@ -297,8 +302,8 @@ const Management =( props )=> {
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
                                                 <View style={{marginRight:'50%'}}>
-                                                    <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked == 2?'checked':''} onPress={()=>setMarked(2)}></RadioButton.Item>
-                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked == 3?'checked':''} onPress={()=>setMarked(3)}></RadioButton.Item>
+                                                    <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked1 == 2?'checked':''} onPress={()=>setMarked1(2)}></RadioButton.Item>
+                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked1 == 3?'checked':''} onPress={()=>setMarked1(3)}></RadioButton.Item>
                                                 </View>
                                             </View>
                                         </View>
@@ -333,8 +338,8 @@ const Management =( props )=> {
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
                                                 <View style={{marginRight:'50%'}}>
-                                                <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked == 2?'checked':''} onPress={()=>setMarked(2)}></RadioButton.Item>
-                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked == 3?'checked':''} onPress={()=>setMarked(3)}></RadioButton.Item>
+                                                <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked2 == 2?'checked':''} onPress={()=>setMarked2(2)}></RadioButton.Item>
+                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked2 == 3?'checked':''} onPress={()=>setMarked2(3)}></RadioButton.Item>
                                                 </View>
                                             </View>
                                         </View>
@@ -369,8 +374,8 @@ const Management =( props )=> {
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
                                                 <View style={{marginRight:'50%'}}>
-                                                <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked == 2?'checked':''} onPress={()=>setMarked(2)}></RadioButton.Item>
-                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked == 3?'checked':''} onPress={()=>setMarked(3)}></RadioButton.Item>
+                                                <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked3 == 2?'checked':''} onPress={()=>setMarked3(2)}></RadioButton.Item>
+                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked3 == 3?'checked':''} onPress={()=>setMarked3(3)}></RadioButton.Item>
                                                 </View>
                                             </View>
                                         </View>
@@ -405,8 +410,8 @@ const Management =( props )=> {
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
                                                 <View style={{marginRight:'50%'}}>
-                                                <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked == 2?'checked':''} onPress={()=>setMarked(2)}></RadioButton.Item>
-                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked == 3?'checked':''} onPress={()=>setMarked(3)}></RadioButton.Item>
+                                                <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked4 == 2?'checked':''} onPress={()=>setMarked4(2)}></RadioButton.Item>
+                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked4 == 3?'checked':''} onPress={()=>setMarked4(3)}></RadioButton.Item>
                                                 </View>
                                             </View>
                                         </View>
@@ -441,8 +446,8 @@ const Management =( props )=> {
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
                                                 <View style={{marginRight:'50%'}}>
-                                                <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked == 2?'checked':''} onPress={()=>setMarked(2)}></RadioButton.Item>
-                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked == 3?'checked':''} onPress={()=>setMarked(3)}></RadioButton.Item>
+                                                <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked5 == 2?'checked':''} onPress={()=>setMarked5(2)}></RadioButton.Item>
+                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked5 == 3?'checked':''} onPress={()=>setMarked5(3)}></RadioButton.Item>
                                                 </View>
                                             </View>
                                         </View>
@@ -477,8 +482,8 @@ const Management =( props )=> {
                                             <View style={{marginTop:10}}>
                                                 <Text style={{color:'black', fontSize:16, fontWeight:800}}>Status</Text>
                                                 <View style={{marginRight:'50%'}}>
-                                                <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked == 2?'checked':''} onPress={()=>setMarked(2)}></RadioButton.Item>
-                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked == 3?'checked':''} onPress={()=>setMarked(3)}></RadioButton.Item>
+                                                <RadioButton.Item label="Completed" labelPosition="right" style={{paddingVertical:0}} status={marked6 == 2?'checked':''} onPress={()=>setMarked6(2)}></RadioButton.Item>
+                                                    <RadioButton.Item label="Ignore" labelPosition="right" style={{paddingVertical:0}} status={marked6 == 3?'checked':''} onPress={()=>setMarked6(3)}></RadioButton.Item>
                                                 </View>
                                             </View>
                                         </View>

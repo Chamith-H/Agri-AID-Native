@@ -1,8 +1,12 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { SelectList } from 'react-native-dropdown-select-list';
+import { Picker } from '@react-native-picker/picker';
 
 const SelectionDropdown =( props )=> {
+
+    const [selectedValue, setSelectedValue] = useState("");
 
     return (
 
@@ -10,7 +14,7 @@ const SelectionDropdown =( props )=> {
             <Text style={styles.label}>{props.Label}</Text>
 
             <View style={{position:'relative', zIndex:3}}>
-            <SelectList 
+            {/* <SelectList 
                 data={props.List} 
                 setSelected={props.Selected}
                 boxStyles={{backgroundColor:'white', alignItems:'center', paddingVertical:7, borderRadius:8, width:200}}
@@ -19,7 +23,20 @@ const SelectionDropdown =( props )=> {
                 dropdownTextStyles={{color:'#4A4747', fontSize:14}}
                 placeholder={props.Placeholder}
                 >
-            </SelectList>
+            </SelectList> */}
+
+        <View>
+            <Picker
+                selectedValue={selectedValue}
+                onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+            >
+
+        <Picker.Item label="Option 1" value="Option 1" />
+        <Picker.Item label="Option 2" value="Option 2" />
+        <Picker.Item label="Option 3" value="Option 3" />
+      </Picker>
+    </View>
+
             </View>
         </View>
     ) 

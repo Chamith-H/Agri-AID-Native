@@ -29,7 +29,6 @@ const DoubleTab =( props )=> {
 
 const styles = StyleSheet.create({
     tabBar: {
-        height:31,
         flexDirection:'row',
         borderStyle:'solid',
         borderWidth:2,
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
     },
 
     separater: {
-        height:31,
+
         width:2,
         backgroundColor:'white'
     },
@@ -46,14 +45,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#005F41',
         alignItems: 'center',
         justifyContent:'center',
-        height:31,
+        paddingVertical:7
     },
 
     active: {
         backgroundColor: '#09392A',
         alignItems: 'center',
         justifyContent:'center',
-        height:31,
+        paddingVertical:7
     },
 
     title: {
