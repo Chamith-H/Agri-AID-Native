@@ -16,6 +16,7 @@ const CredentialField =( props )=> {
                 style={styles.input}
                 placeholder={ props.Placeholder }
                 placeholderTextColor={'grey'}
+                value={props.Value}
                 onChangeText={ props.Change }
             />
         </View>
